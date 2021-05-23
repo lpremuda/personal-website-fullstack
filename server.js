@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const path = require('path')
 const thisRouter = require('./thisRouter')
 
 // Loads environment variable from .env file to process.env
@@ -12,6 +13,9 @@ const portServer = process.env.SERVER_PORT || 5000
 
 // Set our frontend port to be either an environment variable or port 5000
 const portClient = process.env.REACT_APP_PORT || 3000
+
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, './client/build')));
 
 // Helpful Link #1: https://create-react-app.dev/docs/proxying-api-requests-in-development/
 //    CRA webpage that references Helpful Link #2
