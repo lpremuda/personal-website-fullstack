@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.39e2020d.chunk.css",
+    "main.js": "/static/js/main.f932f167.chunk.js",
+    "main.js.map": "/static/js/main.f932f167.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b8b9f3d3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b8b9f3d3.js.map",
+    "static/js/2.a93351df.chunk.js": "/static/js/2.a93351df.chunk.js",
+    "static/js/2.a93351df.chunk.js.map": "/static/js/2.a93351df.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.39e2020d.chunk.css.map": "/static/css/main.39e2020d.chunk.css.map",
+    "static/js/2.a93351df.chunk.js.LICENSE.txt": "/static/js/2.a93351df.chunk.js.LICENSE.txt",
+    "static/media/christopher-gower-m_HRfLhgABo-unsplash.9decca57.jpg": "/static/media/christopher-gower-m_HRfLhgABo-unsplash.9decca57.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b8b9f3d3.js",
+    "static/js/2.a93351df.chunk.js",
+    "static/css/main.39e2020d.chunk.css",
+    "static/js/main.f932f167.chunk.js"
+  ]
+}
