@@ -31,6 +31,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/send-email', thisRouter)
 
+// All remaining requests return the React app, so it can handle routing.
+app.get('*', function(request, response) {
+  response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+});
+
 app.listen(portServer, () => {
   console.log(`Express app listening on port ${portServer}`)
 })
