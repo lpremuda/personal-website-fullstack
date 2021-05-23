@@ -1,43 +1,45 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const path = require('path')
-const thisRouter = require('./thisRouter')
+console.log("Starting index.js file")
 
-// Loads environment variable from .env file to process.env
-require('dotenv').config()
+const express = require('express');
+const path = require('path');
+const cluster = require('cluster');
+const numCPUs = require('os').cpus().length;
 
-const app = express()
+const isDev = process.env.NODE_ENV !== 'production';
+const PORT = process.env.PORT || 5000;
 
-// Set our backend port to be either an environment variable or port 5000
-const portServer = process.env.SERVER_PORT || 5000
+// Multi-process to utilize all CPU cores.
+if (!isDev && cluster.isMaster) {
+  console.error(`Node cluster master ${process.pid} is running`);
 
-// Set our frontend port to be either an environment variable or port 5000
-const portClient = process.env.REACT_APP_PORT || 3000
+  // Fork workers.
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
 
-// Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+  cluster.on('exit', (worker, code, signal) => {
+    console.error(`Node cluster worker ${worker.process.pid} exited: code ${code}, signal ${signal}`);
+  });
 
-// Helpful Link #1: https://create-react-app.dev/docs/proxying-api-requests-in-development/
-//    CRA webpage that references Helpful Link #2
-// Helpful Link #2: https://enable-cors.org/server_expressjs.html
-//    What I copy and pasted from
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", `http://localhost:${portClient}`); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+} else {
+  const app = express();
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use('/send-email', thisRouter)
+  // Priority serve any static files.
+  app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
-// All remaining requests return the React app, so it can handle routing.
-console.log(path.resolve(__dirname, '../client/build', 'index.html'))
-app.get('*', function(request, response) {
-  console.log('app.get("*") called')
-  response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
+  // Answer API requests.
+  app.get('/api', function (req, res) {
+    res.set('Content-Type', 'application/json');
+    res.send('{"message":"Hello from the custom server - Lucas edit!"}');
+  });
 
-app.listen(portServer, () => {
-  console.log(`Express app listening on port ${portServer}`)
-})
+  // All remaining requests return the React app, so it can handle routing.
+  app.get('*', function(request, response) {
+    response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+  });
+
+  app.listen(PORT, function () {
+    console.log(`App listening on port ${PORT}`)
+    console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+process.pid}: listening on port ${PORT}`);
+  });
+}
