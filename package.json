@@ -2,7 +2,9 @@
   "name": "personal-website-fullstack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "nodemon server",
     "build": "cd client && npm install && npm run build"
