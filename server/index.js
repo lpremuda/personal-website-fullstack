@@ -32,7 +32,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/send-email', thisRouter)
 
 // All remaining requests return the React app, so it can handle routing.
+console.log(path.resolve(__dirname, '../client/build', 'index.html'))
 app.get('*', function(request, response) {
+  console.log('app.get("*") called')
   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
