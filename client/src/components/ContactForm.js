@@ -36,7 +36,8 @@ export default function ContactForm() {
 
     await axios({
       method: "POST",
-      url:`http://localhost:${process.env.REACT_APP_SERVER_PORT}/send-email`,
+      // url:`http://localhost:${process.env.REACT_APP_SERVER_PORT}/send-email`,
+      url:'http://localhost:5000/send-email',
       data: formData
     }).then((response)=>{
       if (response.data.status === 'success') {
