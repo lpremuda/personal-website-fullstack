@@ -4,9 +4,14 @@ const express = require('express');
 const path = require('path');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
+const thisRouter = require('./thisRouter')
+const bodyParser = require('body-parser')
 
 const isDev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 5000;
+
+// Set our frontend port to be either an environment variable or port 5000
+const portClient = process.env.REACT_APP_PORT || 3000
 
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
@@ -27,11 +32,19 @@ if (!isDev && cluster.isMaster) {
   // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-  // Answer API requests.
-  app.get('/api', function (req, res) {
-    res.set('Content-Type', 'application/json');
-    res.send('{"message":"Hello from the custom server - Lucas edit!"}');
+  // Helpful Link #1: https://create-react-app.dev/docs/proxying-api-requests-in-development/
+  //    CRA webpage that references Helpful Link #2
+  // Helpful Link #2: https://enable-cors.org/server_expressjs.html
+  //    What I copy and pasted from
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", `http://localhost:${portClient}`); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
   });
+
+  app.use(bodyParser.json())
+  app.use(bodyParser.urlencoded({ extended: false }))
+  app.use('/send-email', thisRouter)
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {
