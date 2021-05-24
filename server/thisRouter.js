@@ -10,7 +10,7 @@ const router = express.Router()
 
 router.get('/', (req,res) => {
   res.send('get thisRouter')
-  sendEmail()
+  // sendEmail()
 })
 
 router.post('/', async (req,res) => {
