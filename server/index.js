@@ -36,15 +36,21 @@ if (!isDev && cluster.isMaster) {
   //    CRA webpage that references Helpful Link #2
   // Helpful Link #2: https://enable-cors.org/server_expressjs.html
   //    What I copy and pasted from
-  // app.use(function(req, res, next) {
-  //   res.header("Access-Control-Allow-Origin", `http://localhost:${portClient}`); // update to match the domain you will make the request from
-  //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  //   next();
-  // });
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", `http://localhost:${portClient}`); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use('/send-email', thisRouter)
+
+  // Answer API requests.
+  app.get('/api', function (req, res) {
+    res.set('Content-Type', 'application/json');
+    res.send('{"message":"Hello from the custom server - Lucas edit!"}');
+  });
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {
