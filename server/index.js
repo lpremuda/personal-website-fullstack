@@ -39,7 +39,7 @@ if (!isDev && cluster.isMaster) {
     // Changed Access-Control-Allow-Origin to '*' which made Heroku work
     res.header("Access-Control-Allow-Origin", '*'); // update to match the domain you will make the request from
     // I saw the below piece of code on Stack Overflow, but it ended up not being need to work:
-    // res.header("Access-Control-Allow-Methods", "DELETE, PUT, GET, POST");
+    res.header("Access-Control-Allow-Methods", "DELETE, PUT, GET, POST");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
@@ -49,7 +49,8 @@ if (!isDev && cluster.isMaster) {
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use('/send-email', thisRouter)
 
-  // // All remaining requests return the React app, so it can handle routing.
+  // All remaining requests return the React app, so it can handle routing.
+  // This seemed like it was necessary before, but after commenting it out and testing it on Heroku, everything works fine
   // app.get('*', function(request, response) {
   //   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
   // });
