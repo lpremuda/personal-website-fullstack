@@ -49,10 +49,10 @@ if (!isDev && cluster.isMaster) {
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use('/send-email', thisRouter)
 
-  // All remaining requests return the React app, so it can handle routing.
-  app.get('*', function(request, response) {
-    response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-  });
+  // // All remaining requests return the React app, so it can handle routing.
+  // app.get('*', function(request, response) {
+  //   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+  // });
 
   app.listen(PORT, function () {
     console.log(`App listening on port ${PORT}`)
