@@ -31,46 +31,26 @@ export default function ContactForm() {
   //   message: false
   // })
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-
-    await axios({
+    console.log("handleSubmit called")
+    axios({
       method: "POST",
       // url:`http://localhost:${process.env.REACT_APP_SERVER_PORT}/send-email`,
       url:'http://localhost:5000/send-email',
       data: formData
     }).then((response)=>{
+      console.log(response)
       if (response.data.status === 'success') {
         alert("Message Sent.");
         resetForm()
       } else if (response.data.status === 'fail') {
         alert("Message failed to send.")
+      } else {
+          console.log(response)
       }
     })
   }
-
-  // function checkForm() {
-  //   const {name, email, message} = formData
-  //   let {nameError, emailError, messageError} = formError
-  //   let errorPresent = false
-  //   if (!name) {
-  //     nameError = true
-  //     errorPresent = true
-  //   }
-  //   if (!email) {
-  //     emailError = true
-  //     errorPresent = true
-  //   }
-  //   if (!message) {
-  //     messageError = true
-  //     errorPresent = true
-  //   }
-  //   setFormError({
-  //     name: nameError,
-  //     email: emailError,
-  //     message: messageError
-  //   })
-  // }
 
   const resetForm = () => {
     setFormData({
@@ -153,7 +133,6 @@ export default function ContactForm() {
           </Button>
         </Grid>
       </Grid>
-      {/* <button type="submit" className="btn btn-primary">Submit</button> */}
       {/* react-mail-icon */}
     </form>
   );

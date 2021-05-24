@@ -14,6 +14,7 @@ router.get('/', (req,res) => {
 })
 
 router.post('/', async (req,res) => {
+  console.log('post request to "/" in thisRouter')
   console.log(req.body)
   await sendEmail(req.body.name, req.body.email, req.body.message)
 })
