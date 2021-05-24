@@ -25,19 +25,11 @@ export default function ContactForm() {
     message: ''
   })
 
-  // const [formError, setFormError] = useState({
-  //   name: false,
-  //   email: false,
-  //   message: false
-  // })
-
   function handleSubmit(e) {
     e.preventDefault();
     console.log("handleSubmit called")
     axios({
       method: "POST",
-      // url:`http://localhost:${process.env.REACT_APP_SERVER_PORT}/send-email`,
-      // url:'http://localhost:5000/send-email',
       url:'/send-email',
       data: formData
     }).then((response)=>{

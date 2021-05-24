@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 
 const isDev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 5000;
-const REACT_APP_PORT = process.env.REACT_APP_PORT || 3000
+// const REACT_APP_PORT = process.env.REACT_APP_PORT || 3000
 
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
@@ -38,6 +38,9 @@ if (!isDev && cluster.isMaster) {
     // Originally has Access-Control-Allow-Origin set to `http://localhost:${portClient}`, where const portClient = process.env.REACT_APP_PORT || 3000
     // This was working on local computer, but not on Heroku
     // Changed Access-Control-Allow-Origin to '*' which made Heroku work
+    // Actually doesn't have to do with '*' anymore. I had been mistakenly running the server/index.js on my local computer and the POST requests were being sent to that, rather than Heroku
+    // http://localhost:${portClient} does NOT work
+    // http://localhost:3000 works
     res.header("Access-Control-Allow-Origin", 'http://localhost:3000'); // update to match the domain you will make the request from
     // I saw the below piece of code on Stack Overflow, but it ended up not being need to work:
     // res.header("Access-Control-Allow-Methods", "DELETE, PUT, GET, POST");
