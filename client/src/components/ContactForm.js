@@ -37,7 +37,8 @@ export default function ContactForm() {
     axios({
       method: "POST",
       // url:`http://localhost:${process.env.REACT_APP_SERVER_PORT}/send-email`,
-      url:'http://localhost:5000/send-email',
+      // url:'http://localhost:5000/send-email',
+      url:'/send-email',
       data: formData
     }).then((response)=>{
       console.log(response)
