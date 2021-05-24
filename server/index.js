@@ -42,6 +42,7 @@ if (!isDev && cluster.isMaster) {
     next();
   });
 
+  console.log(thisRouter)
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use('/send-email', thisRouter)
