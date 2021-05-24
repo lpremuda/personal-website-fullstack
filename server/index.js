@@ -37,7 +37,7 @@ if (!isDev && cluster.isMaster) {
     // Originally has Access-Control-Allow-Origin set to `http://localhost:${portClient}`, where const portClient = process.env.REACT_APP_PORT || 3000
     // This was working on local computer, but not on Heroku
     // Changed Access-Control-Allow-Origin to '*' which made Heroku work
-    res.header("Access-Control-Allow-Origin", '*'); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", 'http://localhost:3000'); // update to match the domain you will make the request from
     // I saw the below piece of code on Stack Overflow, but it ended up not being need to work:
     res.header("Access-Control-Allow-Methods", "DELETE, PUT, GET, POST");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
