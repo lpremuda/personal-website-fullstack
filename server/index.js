@@ -10,9 +10,6 @@ const bodyParser = require('body-parser')
 const isDev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 5000;
 
-// Set our frontend port to be either an environment variable or port 5000
-const portClient = process.env.REACT_APP_PORT || 3000
-
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
   console.error(`Node cluster master ${process.pid} is running`);
@@ -37,7 +34,11 @@ if (!isDev && cluster.isMaster) {
   // Helpful Link #2: https://enable-cors.org/server_expressjs.html
   //    What I copy and pasted from
   app.use(function(req, res, next) {
+    // Originally has Access-Control-Allow-Origin set to `http://localhost:${portClient}`, where const portClient = process.env.REACT_APP_PORT || 3000
+    // This was working on local computer, but not on Heroku
+    // Changed Access-Control-Allow-Origin to '*' which made Heroku work
     res.header("Access-Control-Allow-Origin", '*'); // update to match the domain you will make the request from
+    // I saw the below piece of code on Stack Overflow, but it ended up not being need to work:
     // res.header("Access-Control-Allow-Methods", "DELETE, PUT, GET, POST");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -47,12 +48,6 @@ if (!isDev && cluster.isMaster) {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use('/send-email', thisRouter)
-
-  // Answer API requests.
-  app.get('/api', function (req, res) {
-    res.set('Content-Type', 'application/json');
-    res.send('{"message":"Hello from the custom server - Lucas edit!"}');
-  });
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {
