@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
+import SendButton from './SendButton'
+
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
@@ -8,8 +11,12 @@ import Button from '@material-ui/core/Button'
 import { GrSend } from 'react-icons/gr'
 
 const useStyles = makeStyles((theme) => ({
+  projectTitleContainer: {
+    fontWeight: 700,
+  },
   submitButton: {
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
+    color: 'inherit'
   },
   inputField: {
     marginBottom: theme.spacing(1)
@@ -72,7 +79,7 @@ export default function ContactForm() {
     <form id="contact-form" onSubmit={handleSubmit} method="POST">
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Typography variant="h4" align="center" gutterBottom>Contact</Typography>
+          <Typography variant="h2" align="center" gutterBottom className={classes.projectTitleContainer}>Contact</Typography>
           <Typography variant="subtitle1" gutterBottom>Please fill out the following fields on the contact form and I will respond within 24 hours.</Typography>
         </Grid>
         <Grid item xs={12}>
@@ -115,15 +122,16 @@ export default function ContactForm() {
           />
         </Grid>
         <Grid item xs={12} container justify="center">
-          <Button
+          {/* <Button
             type="submit"
             variant="contained"
             color="primary"
-            startIcon={<GrSend />}
+            startIcon={<GrSend color="inherit" />}
             size="large"
             className={classes.submitButton}
           >Submit
-          </Button>
+          </Button> */}
+          <SendButton />
         </Grid>
       </Grid>
       {/* react-mail-icon */}

@@ -1,41 +1,38 @@
 import React from 'react'
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core'
-import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { Accordion, AccordionDetails, AccordionSummary } from '@material-ui/core'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+
 import AccordionItem from './AccordionItem'
 
-// const theme = useTheme()
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
+import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles((theme) => ({
+  card: {
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  },
+  cardActions: {
+    display: "flex",
+    margin: "0 10px",
+    justifyContent: "space-between"
+  },
+  cardSection: {
+    // minHeight: '350px',
+    // [theme.breakpoints.down('xs')]: {
+    //   minHeight: '250px',
+    // },
+  },
+}))
 
 export default function CardItem5() {
-
-  const theme = useTheme()
-
-  const useStyles = makeStyles({
-    card: {
-      flexGrow: 1,
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between'
-    },
-    cardActions: {
-      display: "flex",
-      margin: "0 10px",
-      justifyContent: "space-between"
-    },
-    cardSection: {
-      // minHeight: '350px',
-      // [theme.breakpoints.down('xs')]: {
-      //   minHeight: '250px',
-      // },
-    },
-    accordionHeading: {
-
-    }
-  })
-
   const classes = useStyles()
 
   return (
@@ -58,7 +55,7 @@ export default function CardItem5() {
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.cardActions}>
-        {/* <Button>
+        <Button>
           Learn More
         </Button>
         <Button>
@@ -66,7 +63,7 @@ export default function CardItem5() {
         </Button>
         <Box>
           <BookmarkBorderIcon />
-        </Box> */}
+        </Box>
         
       </CardActions>
       <AccordionItem />

@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+
 import Avatar from '@material-ui/core/Avatar'
 import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   projectsContainer: {
     display: 'flex',
     justifyContent: 'center',
     maxWidth: theme.breakpoints.values['lg'],
+    marginBottom: theme.spacing(4),
   },
   gridClass: {
     display: 'flex',
