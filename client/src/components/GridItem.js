@@ -1,10 +1,9 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
 
-export default function GridItem({ children, position, ...otherVars }) {
+import { makeStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
 
-  const theme = useTheme()
+export default function GridItem({ children, position, xs, sm, md, bgColor, minHeight, ...otherVars }) {
 
   const pos = parseInt(position)
 
@@ -19,24 +18,27 @@ export default function GridItem({ children, position, ...otherVars }) {
     xsPos = pos
   }
 
-  const useStyles = makeStyles({
+  const useStyles = makeStyles((theme) => ({
     gridClass: {
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '350px',
-      justifyContent: 'center',
+      // minHeight: '350px',
+      minHeight: minHeight,
+      // height: '70vh',
+      justifyContent: 'space-around',
       alignItems: 'center',
       order: pos,
       [theme.breakpoints.down('xs')]: {
         order: xsPos,
       },
+      backgroundColor: bgColor,
     }
-  })
+  }))
 
   const classes = useStyles()
   
   return (
-    <Grid {...(otherVars.id ? { id: otherVars.id } : {})} item xs={12} sm={6} md={6} className={classes.gridClass}>
+    <Grid {...(otherVars.id ? { id: otherVars.id } : {})} item xs={xs} sm={sm} md={md} className={classes.gridClass}>
       {children} 
     </Grid>
   )

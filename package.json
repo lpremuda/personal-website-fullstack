@@ -8,7 +8,7 @@
   "scripts": {
     "start": "nodemon server",
     "build": "cd client && npm install && npm run build",
-    "devStartClient": "cd client && npm start",
+    "devClient": "cd client && npm start",
     "dev": "concurrently --kill-others-on-fail \"npm run devStartClient\" \"npm run start\""
   },
   "cacheDirectories": [

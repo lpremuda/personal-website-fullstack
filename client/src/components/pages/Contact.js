@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+
 import ContactForm from '../ContactForm'
+
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   contactFormContainer: {
@@ -8,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
     maxWidth: theme.breakpoints.values['sm'],
     [theme.breakpoints.down('xs')]: {
       width: '90%'
