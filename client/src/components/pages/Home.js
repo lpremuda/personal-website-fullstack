@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 
+import { configProjects } from '../../configProjects'
+
 import CardItem5 from '../CardItem5'
 import GridItem from '../GridItem'
 import ImageItem3 from '../ImageItem3'
@@ -139,7 +141,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor="#fff"
             minHeight="70vh"
           >
-            <ProjectMain />
+            <ProjectMain config={configProjects.proj1} />
           </GridItem>
           <GridItem
             position="1"
@@ -170,7 +172,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor={theme.palette.primary.light}
             minHeight="70vh"
           >
-            <ProjectMain />
+            <ProjectMain config={configProjects.proj1} />
           </GridItem>
           <GridItem
             id="project3"
@@ -181,7 +183,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor="#fff"
             minHeight="70vh"
           >
-            <ProjectMain />
+            <ProjectMain config={configProjects.proj1} />
           </GridItem>
           <GridItem
             position="5"
@@ -212,7 +214,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor={theme.palette.primary.light}
             minHeight="70vh"
           >
-            <ProjectMain />
+            <ProjectMain config={configProjects.proj1} />
           </GridItem>
           <GridItem
             id="resume"

@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     margin: `${theme.spacing(2)}px 0`,
   },
   projectDescription: {
-    marginBottom: theme.spacing(8)
+    marginBottom: theme.spacing(4)
   },
   buttonsContainer: {
     // height: '100%',
@@ -96,11 +96,9 @@ export default function ProjectMain() {
           <Grid item xs={12} sm={6} justify="center" align="center">
             <div className={classes.projectDescriptionContainer}>
               <Typography display="block" variant="h4" align="left" className={classes.projectDescription}>
-                Contact information, such as address and phone number, have been removed from the resume for privacy.
+                Contact information, such as address and phone number, have been removed for privacy.
                 <br />
                 <br />
-              {/* </Typography>
-              <Typography display="block" variant="h4" align="center"> */}
                 To get in direct contact, you can fill out the&nbsp;
                 <MuiLink href="/contact">
                   contact form

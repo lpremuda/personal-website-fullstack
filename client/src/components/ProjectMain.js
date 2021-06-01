@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-import ModalBody from './ModalBody'
+import DemoButton from './DemoButton'
+import ModalBody3 from './ModalBody3'
 
 import { makeStyles } from '@material-ui/styles'
 import Box from '@material-ui/core/Box'
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function ProjectMain() {
+export default function ProjectMain({ config }) {
   const classes = useStyles()
 
   const [open, setOpen] = useState(false)
@@ -47,12 +48,12 @@ export default function ProjectMain() {
     <div className={classes.projectMainContainer}>
       <div className={classes.projectTitleContainer}>
         <Typography display="block" variant="h2" align="center" className={classes.projectTitleContainer}>
-          React Sign-In App with Firebase
+          {config.hero.title}
         </Typography>
       </div>
       <div className={classes.projectDescriptionContainer}>
         <Typography display="block" variant="h3" align="center">
-          The Power of React with the utility of Firebase
+          {config.hero.description}
         </Typography>
       </div>
       <div className={classes.buttonsContainer}>
@@ -64,14 +65,8 @@ export default function ProjectMain() {
         >
           More Detail
         </Button>
-        <ModalBody open={open} handleClose={handleClose} />
-        <Button
-          variant="contained"
-          color="secondary"
-          size='large'
-        >
-          Demo
-        </Button>
+        <ModalBody3 open={open} handleClose={handleClose} config={config} />
+        <DemoButton href="https://react-firebase-auth-app.herokuapp.com/login" />
       </div>
     </div>
   )

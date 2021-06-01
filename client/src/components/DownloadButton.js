@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     boxSizing: 'border-box',
     color: theme.palette.primary.contrastText,
+    marginBottom: theme.spacing(4),
   },
   icon: {
     marginRight: theme.spacing(2)

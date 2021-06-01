@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   modalBodyContainer: {
-    height: '90vh', // probably need to change this to minHeight for mobile mode
+    minHeight: '90vh', // probably need to change this to minHeight for mobile mode
     width: '90vw',
     maxWidth: theme.breakpoints.values['lg'],
     margin: 'auto',
@@ -58,14 +58,14 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1.5),
   },
   unitContainer: {
-    height: '100%',
+    height: '100%', // causing weird things to happen
     padding: theme.spacing(1.5),
     boxSizing: 'border-box',
   },
   // Right Column
   mediaContainer: {
     flex: '1 0 60%',
-    backgroundColor: 'orange',
+    backgroundColor: 'blue',
   },
   linksContainer: {
     flex: '1 0 40%'
