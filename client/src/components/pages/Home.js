@@ -2,9 +2,8 @@ import React, { useEffect } from 'react'
 
 import { configProjects } from '../../configProjects'
 
-import CardItem5 from '../CardItem5'
 import GridItem from '../GridItem'
-import ImageItem3 from '../ImageItem3'
+import ImageItem from '../ImageItem'
 import ProjectMain from '../ProjectMain'
 import ResumeMain from '../ResumeMain'
 import heroImage from '../../images/christopher-gower-m_HRfLhgABo-unsplash.jpg'
@@ -15,20 +14,12 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
-  // mainContainer: {
-  //   position: 'absolute',
-  //   top: 0,
-  // },
   heroMainContainer: {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${heroImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     height: '100vh',
-    // display: 'flex',
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    // alignItems: 'center',
     fontSize: '4rem',
     color: '#fff',
     position: 'relative',
@@ -64,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
   },
   heroGridContainer: {
     height: '100%',
-    // width: '100%',
     boxSizing: 'border-box',
     border: '2px solid yellow',
   },
@@ -79,25 +69,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'purple',
     flex: '1 1 20px',
     height: '50px',
-    // width: '50px',
   },
   projectsContainer: {
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    // maxWidth: theme.breakpoints.values['lg'],
-    // margin: 'auto',
-    // backgroundColor: 'red',
   },
   projectsGridContainer: {
     width: '100%',
-    // padding: `0 ${theme.spacing(8)}px`
   },
-  // projectsRow: {
-  //   backgroundColor: 'red',
-  //   display: 'flex',
-  //   width: '100%',
-  // },
 }));
 
 export default function Home({ enableShowNavProjects }) {
@@ -141,7 +121,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor="#fff"
             minHeight="70vh"
           >
-            <ProjectMain config={configProjects.proj1} />
+            <ProjectMain config={configProjects.reactSignIn} />
           </GridItem>
           <GridItem
             position="1"
@@ -151,7 +131,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor="#fff"
             minHeight="70vh"
           >
-            <ImageItem3 />
+            <ImageItem config={configProjects.reactSignIn} />
           </GridItem>
           <GridItem
             position="2"
@@ -161,7 +141,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor={theme.palette.primary.light}
             minHeight="70vh"
           >
-            <ImageItem3 />
+            <ImageItem config={configProjects.me_nLibrary} />
           </GridItem>
           <GridItem
             id="project2"
@@ -172,7 +152,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor={theme.palette.primary.light}
             minHeight="70vh"
           >
-            <ProjectMain config={configProjects.proj1} />
+            <ProjectMain config={configProjects.me_nLibrary} />
           </GridItem>
           <GridItem
             id="project3"
@@ -183,7 +163,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor="#fff"
             minHeight="70vh"
           >
-            <ProjectMain config={configProjects.proj1} />
+            <ProjectMain config={configProjects.personalWebsite} />
           </GridItem>
           <GridItem
             position="5"
@@ -193,7 +173,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor="#fff"
             minHeight="70vh"
           >
-            <ImageItem3 />
+            <ImageItem config={configProjects.personalWebsite} />
           </GridItem>
           <GridItem
             position="6"
@@ -203,7 +183,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor={theme.palette.primary.light}
             minHeight="70vh"
           >
-            <ImageItem3 />
+            <ImageItem config={configProjects.reactSignIn} />
           </GridItem>
           <GridItem
             id="project4"
@@ -214,7 +194,7 @@ export default function Home({ enableShowNavProjects }) {
             bgColor={theme.palette.primary.light}
             minHeight="70vh"
           >
-            <ProjectMain config={configProjects.proj1} />
+            <ProjectMain config={configProjects.reactSignIn} />
           </GridItem>
           <GridItem
             id="resume"

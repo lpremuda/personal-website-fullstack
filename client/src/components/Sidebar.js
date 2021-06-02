@@ -83,7 +83,7 @@ export default function Sidebar({ toggleDrawer, dwrOpen }) {
       <Divider className={classes.divider}/>
       <List>
         <ListItem button key="resume" className={classes.sideBarLink}>
-          <Link className={classes.link} to="/resume" color="inherit">Resume</Link>
+          <ScrollLinkCustom to="resume" text="Resume" closeDrawerFunc={toggleDrawer(false)} />
         </ListItem>
         <ListItem button key="contact" className={classes.sideBarLink}>
           <Link className={classes.link} to="/contact" color="inherit">Contact</Link>

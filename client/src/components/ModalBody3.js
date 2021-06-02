@@ -199,10 +199,10 @@ export default function ModalBody({ open, handleClose, config }) {
                   justifyContent="space-evenly"
                   alignItems="center"
                 >
-                  <a target="_blank" rel="noreferrer" href={config.dialog.links.github} className={classes.iconLink} >
+                  <a target="_blank" rel="noreferrer" href={config.links.github} className={classes.iconLink} >
                     <GitHubIcon fontSize="large" />
                   </a>
-                  <DemoButton href={config.dialog.links.demo} />
+                  <DemoButton href={config.links.demo} />
                 </Box>
               </Paper>
             </Grid>

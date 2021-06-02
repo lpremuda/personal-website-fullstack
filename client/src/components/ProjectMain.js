@@ -66,7 +66,7 @@ export default function ProjectMain({ config }) {
           More Detail
         </Button>
         <ModalBody3 open={open} handleClose={handleClose} config={config} />
-        <DemoButton href="https://react-firebase-auth-app.herokuapp.com/login" />
+        <DemoButton href={config.links.demo} />
       </div>
     </div>
   )

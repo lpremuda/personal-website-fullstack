@@ -5,7 +5,6 @@ import Contact from './components/pages/Contact'
 import Footer from './components/Footer'
 import Home from './components/pages/Home'
 import Navbar2 from './components/Navbar2'
-import Resume from './components/pages/Resume'
 import Sidebar from './components/Sidebar'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -59,9 +58,6 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <Home enableShowNavProjects={enableShowNavProjects} />
-            </Route>
-            <Route path="/resume" >
-              <Resume disableShowNavProjects={disableShowNavProjects} />
             </Route>
             <Route path="/contact" >
               <Contact disableShowNavProjects={disableShowNavProjects} />
