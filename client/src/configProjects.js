@@ -24,6 +24,13 @@ export const configProjects = {
       backEnd: [
         "Firebase"
       ],
+      imageFiles: [
+        "images/YourLibrary/YourLibrary-Index.jpg",
+        "images/YourLibrary/YourLibrary-Book_New.jpg",
+        "images/YourLibrary/YourLibrary-Book_Show.jpg",
+        "images/YourLibrary/YourLibrary-Author_New.jpg",
+        "images/YourLibrary/YourLibrary-Author_Show.jpg",        
+      ],
     },
     links: {
       github: "https://github.com/lpremuda/react-firebase-auth-app",
@@ -59,10 +66,17 @@ export const configProjects = {
         "MongoDB",
         "Mongoose.js",
       ],
+      imageFiles: [
+        "images/YourLibrary/YourLibrary-Index.jpg",
+        "images/YourLibrary/YourLibrary-Book_New.jpg",
+        "images/YourLibrary/YourLibrary-Book_Show.jpg",
+        "images/YourLibrary/YourLibrary-Author_New.jpg",
+        "images/YourLibrary/YourLibrary-Author_Show.jpg",        
+      ],
     },
     links: {
-      github: "https://github.com/lpremuda/react-firebase-auth-app",
-      demo: "https://mybrary-lucas.herokuapp.com"
+      github: "https://github.com/lpremuda/YourLibrary",
+      demo: "https://your-library.herokuapp.com/"
     }
   },
   personalWebsite: {
@@ -92,6 +106,13 @@ export const configProjects = {
         "Node.js",
         "Express.js",
         "Nodemailer"
+      ],
+      imageFiles: [
+        "images/YourLibrary/YourLibrary-Index.jpg",
+        "images/YourLibrary/YourLibrary-Book_New.jpg",
+        "images/YourLibrary/YourLibrary-Book_Show.jpg",
+        "images/YourLibrary/YourLibrary-Author_New.jpg",
+        "images/YourLibrary/YourLibrary-Author_Show.jpg",        
       ],
     },
     links: {

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { config } from '../config'
 import DemoButton from './DemoButton'
+import DialogImageCarousel from './DialogImageCarousel'
 
 import { makeStyles, darken, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -102,113 +103,128 @@ export default function ModalBody({ open, handleClose, config }) {
   const classes = useStyles()
   const theme = useTheme()
 
+  const [openDIC, setOpenDIC] = useState(false)
+
+  const handleClickDIC = () => {
+    setOpenDIC(true)
+  }
+
+  const handleCloseDIC = () => {
+    setOpenDIC(false)
+  }
+
   return (
-    // <Zoom
-    //   in={open}
-    // >
-      <Dialog
-        open={open}
-        // fullWidth={true}
-        onClose={handleClose}
-        flexDirection="column"
-        maxWidth={theme.breakpoints.values['lg']}
-        TransitionComponent={Transition}
+    <Dialog
+      open={open}
+      // fullWidth={true}
+      onClose={handleClose}
+      flexDirection="column"
+      maxWidth={theme.breakpoints.values['lg']}
+      TransitionComponent={Transition}
+    >
+      <Box
+        height="90vh"
+        maxWidth="90vw"
+        // maxWidth={theme.breakpoints.values['lg']}
+        display="flex"
+        flexDirection="row"
+        justifyContent="flex-start"
+        borderRadius={10}
+        boxSizing="border-box"
+        p={1}
+        bgColor={theme.palette.background.default}
+        className={classes.modalBodyContainer}
       >
-        <Box
-          height="90vh"
-          maxWidth="90vw"
-          // maxWidth={theme.breakpoints.values['lg']}
-          display="flex"
-          flexDirection="row"
-          justifyContent="flex-start"
-          borderRadius={10}
-          boxSizing="border-box"
-          p={1}
-          bgColor={theme.palette.background.default}
-          className={classes.modalBodyContainer}
-        >
-          <IconButton
-            color="inherit"
-            size="medium"
-            onClick={handleClose}
-            className={classes.closeButton}
-            aria-label="menu">
-              <CancelIcon fontSize="large" />
-          </IconButton>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <div className={classes.projectTitleContainer}>
-                <Typography display="block" variant="h2" align="center" className={classes.projectTitleContainer}>
-                  {config.hero.title}
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.projectDescriptionContainer}`}>
-                {config.dialog.projectDescription.map((line) => (
-                  <Typography variant="body1" className={classes.projectDescriptionTypography}>
-                    {line}  
-                  </Typography>
-                ))}
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.imageContainer}`}>
-                {/* <Box className={classes.imageContainer}> */}
-                  <img
-                  src={"images/react-firebase-log-in.jpg"}
-                  alt='ImageItem3.js'
-                  className={classes.image}
-                  />
-                {/* </Box> */}
-              </Paper>
-            </Grid>
-            <Grid item xs={6} sm={3} className={classes.bottomGridItem}>
-              <Paper elevation={elevation} className={`${classes.unitContainer}`}>
-                <Typography variant="h5" gutterBottom className={classes.projectSubTitle}>
-                  Front-End
-                </Typography>
-                {config.dialog.frontEnd.map((line) => (
-                  <Typography variant="body1">
-                    {line}  
-                  </Typography>
-                ))}
-              </Paper>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Paper elevation={elevation} className={`${classes.unitContainer}`}>
-                <Typography variant="h5" gutterBottom className={classes.projectSubTitle}>
-                  Back-End
-                </Typography>
-                {config.dialog.backEnd.map((line) => (
-                  <Typography variant="body1">
-                    {line}  
-                  </Typography>
-                ))}
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.linksPaper}`}>
-                <Typography variant="h5" gutterBottom className={classes.projectSubTitle}>
-                  Links
-                </Typography>
-                <Box
-                  flexGrow={1}
-                  display="flex"
-                  flexDirection="row"
-                  justifyContent="space-evenly"
-                  alignItems="center"
-                >
-                  <a target="_blank" rel="noreferrer" href={config.links.github} className={classes.iconLink} >
-                    <GitHubIcon fontSize="large" />
-                  </a>
-                  <DemoButton href={config.links.demo} />
-                </Box>
-              </Paper>
-            </Grid>
+        <IconButton
+          color="inherit"
+          size="medium"
+          onClick={handleClose}
+          className={classes.closeButton}
+          aria-label="menu">
+            <CancelIcon fontSize="large" />
+        </IconButton>
+        <DialogImageCarousel open={openDIC} handleClose={handleCloseDIC} config={config} />
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <div className={classes.projectTitleContainer}>
+              <Typography display="block" variant="h2" align="center" className={classes.projectTitleContainer}>
+                {config.hero.title}
+              </Typography>
+            </div>
           </Grid>
-        </Box>
-      </Dialog>
-    // </Zoom>
+          <Grid item xs={12} sm={6}>
+            <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.projectDescriptionContainer}`}>
+              {config.dialog.projectDescription.map((line) => (
+                <Typography variant="body1" className={classes.projectDescriptionTypography}>
+                  {line}  
+                </Typography>
+              ))}
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.imageContainer}`}>
+              {/* <Box className={classes.imageContainer}> */}
+                <img
+                src={"images/react-firebase-log-in.jpg"}
+                alt='ImageItem3.js'
+                className={classes.image}
+                />
+              {/* </Box> */}
+            </Paper>
+          </Grid>
+          <Grid item xs={6} sm={3} className={classes.bottomGridItem}>
+            <Paper elevation={elevation} className={`${classes.unitContainer}`}>
+              <Typography variant="h5" gutterBottom className={classes.projectSubTitle}>
+                Front-End
+              </Typography>
+              {config.dialog.frontEnd.map((line) => (
+                <Typography variant="body1">
+                  {line}  
+                </Typography>
+              ))}
+            </Paper>
+          </Grid>
+          <Grid item xs={6} sm={3}>
+            <Paper elevation={elevation} className={`${classes.unitContainer}`}>
+              <Typography variant="h5" gutterBottom className={classes.projectSubTitle}>
+                Back-End
+              </Typography>
+              {config.dialog.backEnd.map((line) => (
+                <Typography variant="body1">
+                  {line}  
+                </Typography>
+              ))}
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.linksPaper}`}>
+              <Typography variant="h5" gutterBottom className={classes.projectSubTitle}>
+                Links
+              </Typography>
+              <Box
+                flexGrow={1}
+                display="flex"
+                flexDirection="row"
+                justifyContent="space-evenly"
+                alignItems="center"
+              >
+                <a target="_blank" rel="noreferrer" href={config.links.github} className={classes.iconLink} >
+                  <GitHubIcon fontSize="large" />
+                </a>
+                <DemoButton href={config.links.demo} />
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size='large'
+                  onClick={handleClickDIC}
+                >
+                  Image Carousel
+                </Button>
+              </Box>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Box>
+    </Dialog>
   )
 } 
