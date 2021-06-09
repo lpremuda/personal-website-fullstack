@@ -3,7 +3,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
-export default function GridItem({ children, position, xs, sm, md, bgColor, minHeight, ...otherVars }) {
+export default function GridItem({ children, position, xs, sm, md, bgColor, minHeight, height, ...otherVars }) {
 
   const pos = parseInt(position)
 
@@ -22,9 +22,9 @@ export default function GridItem({ children, position, xs, sm, md, bgColor, minH
     gridClass: {
       display: 'flex',
       flexDirection: 'column',
-      // minHeight: '350px',
       minHeight: minHeight,
       // height: '70vh',
+      height: height,
       justifyContent: 'space-around',
       alignItems: 'center',
       order: pos,

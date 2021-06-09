@@ -1,12 +1,15 @@
+import { useTheme } from '@material-ui/styles'
+
 export const configProjects = {
   reactSignIn: {
     hero: {
       title: "React Sign-In App with Firebase",
       description: "React-based sign-in app with React Bootstrap on front end and Firebase Authentication API on back end",
       image: {
-        src: "images/react-firebase-log-in.jpg",
-        alt: "react-firebase-log-in.jpg"
-      }
+        src: "images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg",
+        alt: "ReactSignIn-SignUp_Successful.jpg"
+      },
+      backgroundColor: "#fff"
     },
     dialog: {
       projectDescription: [
@@ -25,26 +28,40 @@ export const configProjects = {
         "Firebase"
       ],
       imageFiles: [
-        "images/YourLibrary/YourLibrary-Index.jpg",
-        "images/YourLibrary/YourLibrary-Book_New.jpg",
-        "images/YourLibrary/YourLibrary-Book_Show.jpg",
-        "images/YourLibrary/YourLibrary-Author_New.jpg",
-        "images/YourLibrary/YourLibrary-Author_Show.jpg",        
+        "url(images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-Login.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-Dashboard.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-UpdateProfile_Error.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-UpdateProfile_Successful.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-PasswordReset.jpg)",   
+        "url(images/ReactSignIn/ReactSignIn-Login_Error.jpg)",         
       ],
+      imageFilesNoURL: [
+        "images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg",
+        "images/ReactSignIn/ReactSignIn-Login.jpg",
+        "images/ReactSignIn/ReactSignIn-Dashboard.jpg",
+        "images/ReactSignIn/ReactSignIn-UpdateProfile_Error.jpg",
+        "images/ReactSignIn/ReactSignIn-UpdateProfile_Successful.jpg",
+        "images/ReactSignIn/ReactSignIn-PasswordReset.jpg",   
+        "images/ReactSignIn/ReactSignIn-Login_Error.jpg",             
+      ],
+      grayCancelBtn: false,
     },
     links: {
       github: "https://github.com/lpremuda/react-firebase-auth-app",
       demo: "https://react-firebase-auth-app.herokuapp.com/login"
     }
   },
+
   me_nLibrary: {
     hero: {
       title: "Full-Stack MEN Library App",
       description: "MongoDB, Express, and Node working together to build full-stack RESTful following the MVC design pattern",
       image: {
-        src: "images/react-firebase-log-in.jpg", //FIX
-        alt: "react-firebase-log-in.jpg" //FIX
-      }
+        src: "images/YourLibrary/YourLibrary-Index.jpg",
+        alt: "YourLibrary-Index.jpg"
+      },
+      backgroundColor: "blue"
     },
     dialog: {
       projectDescription: [
@@ -67,18 +84,27 @@ export const configProjects = {
         "Mongoose.js",
       ],
       imageFiles: [
+        "url(images/YourLibrary/YourLibrary-Index.jpg)",
+        "url(images/YourLibrary/YourLibrary-Book_New.jpg)",
+        "url(images/YourLibrary/YourLibrary-Book_Show.jpg)",
+        "url(images/YourLibrary/YourLibrary-Author_New.jpg)",
+        "url(images/YourLibrary/YourLibrary-Author_Show.jpg)",        
+      ],
+      imageFilesNoURL: [
         "images/YourLibrary/YourLibrary-Index.jpg",
         "images/YourLibrary/YourLibrary-Book_New.jpg",
         "images/YourLibrary/YourLibrary-Book_Show.jpg",
         "images/YourLibrary/YourLibrary-Author_New.jpg",
         "images/YourLibrary/YourLibrary-Author_Show.jpg",        
       ],
+      grayCancelBtn: true,
     },
     links: {
       github: "https://github.com/lpremuda/YourLibrary",
       demo: "https://your-library.herokuapp.com/"
     }
   },
+
   personalWebsite: {
     hero: {
       title: "LUCAS.PREMUDA Portfolio Website",
@@ -86,7 +112,8 @@ export const configProjects = {
       image: {
         src: "images/react-firebase-log-in.jpg", //FIX
         alt: "react-firebase-log-in.jpg" //FIX
-      }
+      },
+      backgroundColor: "#fff"
     },
     dialog: {
       projectDescription: [
@@ -108,12 +135,24 @@ export const configProjects = {
         "Nodemailer"
       ],
       imageFiles: [
-        "images/YourLibrary/YourLibrary-Index.jpg",
-        "images/YourLibrary/YourLibrary-Book_New.jpg",
-        "images/YourLibrary/YourLibrary-Book_Show.jpg",
-        "images/YourLibrary/YourLibrary-Author_New.jpg",
-        "images/YourLibrary/YourLibrary-Author_Show.jpg",        
+        "url(images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-Login.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-Dashboard.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-UpdateProfile_Error.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-UpdateProfile_Successful.jpg)",
+        "url(images/ReactSignIn/ReactSignIn-PasswordReset.jpg)",   
+        "url(images/ReactSignIn/ReactSignIn-Login_Error.jpg)",         
       ],
+      imageFilesNoURL: [
+        "images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg",
+        "images/ReactSignIn/ReactSignIn-Login.jpg",
+        "images/ReactSignIn/ReactSignIn-Dashboard.jpg",
+        "images/ReactSignIn/ReactSignIn-UpdateProfile_Error.jpg",
+        "images/ReactSignIn/ReactSignIn-UpdateProfile_Successful.jpg",
+        "images/ReactSignIn/ReactSignIn-PasswordReset.jpg",   
+        "images/ReactSignIn/ReactSignIn-Login_Error.jpg",             
+      ],
+      grayCancelBtn: false,
     },
     links: {
       github: "https://github.com/lpremuda/react-firebase-auth-app",

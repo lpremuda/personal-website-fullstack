@@ -165,8 +165,8 @@ export default function ModalBody({ open, handleClose, config }) {
             <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.imageContainer}`}>
               {/* <Box className={classes.imageContainer}> */}
                 <img
-                src={"images/react-firebase-log-in.jpg"}
-                alt='ImageItem3.js'
+                src={config.hero.image.src}
+                alt={config.hero.image.alt}
                 className={classes.image}
                 />
               {/* </Box> */}

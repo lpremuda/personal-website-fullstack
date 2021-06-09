@@ -18,16 +18,17 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
   },
   projectTitleContainer: {
-    marginTop: '5%',
+    marginTop: `${theme.spacing(4)}px`,
     fontWeight: 700,
   },
   projectDescriptionContainer: {
+    margin: `${theme.spacing(4)}px 0`,
   },
   buttonsContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginBottom: '5%',
+    margin: `${theme.spacing(4)}px 0`,
   },
 }))
 

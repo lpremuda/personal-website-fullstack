@@ -16,7 +16,8 @@ export default function ImageItem({ config }) {
       justifyContent: 'center',
       alignItems: 'center',
       '& > img': {
-        width: '100%',
+        maxWidth: '100%',
+        maxHeight: '100%',
         borderRadius: '10px',
       },
     },
@@ -32,15 +33,10 @@ export default function ImageItem({ config }) {
 
   return (
     <div className={classes.imageContainer}>
-        {/* <Image
-          src="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          // className={classes.cardMedia}
-          aspectRatio={(2/1)}
-          cover
-          /> */}
         <img
-          src={config.hero.image.src}
-          alt={config.hero.image.alt}
+          // src={config.hero.image.src}
+          // alt={config.hero.image.alt}
+          src={config.dialog.imageFilesNoURL[0]}
           className={classes.image}
           />
     </div>
