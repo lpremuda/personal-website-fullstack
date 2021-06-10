@@ -19,13 +19,19 @@ import CancelIcon from '@material-ui/icons/Cancel'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
 const useStyles = makeStyles((theme) => ({
+  dialog: {
+    // height: '90vh',
+    // maxWidth: '90vw',
+    // display: 'flex',
+    // justifyContent: 'center',
+  },
   modalBodyContainer: {
     backgroundColor: '#fff',
-    overflow: 'visible',
+    // overflow: 'visible',
     // height: '200vh',
   },
   projectTitleContainer: {
-    margin: `${theme.spacing(2)}px 0`,
+    // margin: `${theme.spacing(2)}px 0`,
     fontWeight: 700,
     display: 'flex',
     justifyContent: 'center',
@@ -33,10 +39,6 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: 0,
     }
-  },
-  gridContainer: {
-    height: '100%',
-    padding: `0 ${theme.spacing(2)}px ${theme.spacing(2)}px ${theme.spacing(2)}px`
   },
   // Left Column
   projectDescriptionContainer: {
@@ -50,8 +52,11 @@ const useStyles = makeStyles((theme) => ({
   projectDescriptionTypography: {
     marginBottom: theme.spacing(1.2)
   },
+  imageGridItem: {
+    height: '550px'
+  },
   imageContainer: {
-    height: '100%',
+    // height: '100%',
     width: '100%',
     padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
     boxSizing: 'border-box',
@@ -61,10 +66,15 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     '& > img': {
       // width: '100%',
+      // height: '250px',
+      // flexGrow: 1,
+      // width: '100%',
+      height: '100%',
       maxWidth: '100%',
       borderRadius: '10px',
-      objectFit: 'cover',
+      objectFit: 'contain',
     },
+    // backgroundColor: 'green',
   },  
   unitContainer: {
     height: '100%',
@@ -87,7 +97,6 @@ const useStyles = makeStyles((theme) => ({
   },
   closeButton: {
     position: 'absolute',
-    // padding: 0,
     top: 0,
     right: 0,
   }
@@ -121,14 +130,15 @@ export default function ModalBody({ open, handleClose, config }) {
       flexDirection="column"
       maxWidth={theme.breakpoints.values['lg']}
       TransitionComponent={Transition}
+      className={classes.dialog}
     >
       <Box
         height="90vh"
         maxWidth="90vw"
         // maxWidth={theme.breakpoints.values['lg']}
         display="flex"
-        flexDirection="row"
-        justifyContent="flex-start"
+        // flexDirection="column"
+        // justifyContent="flex-start"
         borderRadius={10}
         boxSizing="border-box"
         p={1}
@@ -161,27 +171,31 @@ export default function ModalBody({ open, handleClose, config }) {
               ))}
             </Paper>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6} className={classes.imageGridItem}>
             <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.imageContainer}`}>
-              {/* <Box className={classes.imageContainer}> */}
-                <img
+              <img
                 src={config.hero.image.src}
                 alt={config.hero.image.alt}
-                className={classes.image}
-                />
-              {/* </Box> */}
+              />
             </Paper>
           </Grid>
-          <Grid item xs={6} sm={3} className={classes.bottomGridItem}>
+          <Grid item xs={6} sm={3}>
             <Paper elevation={elevation} className={`${classes.unitContainer}`}>
               <Typography variant="h5" gutterBottom className={classes.projectSubTitle}>
                 Front-End
               </Typography>
-              {config.dialog.frontEnd.map((line) => (
-                <Typography variant="body1">
-                  {line}  
-                </Typography>
-              ))}
+              <Box
+                display="flex"
+                flexDirection="column"
+                flexWrap="wrap"
+                height="100px"
+              >
+                {config.dialog.frontEnd.map((line) => (
+                  <Typography variant="body1">
+                    {line}  
+                  </Typography>
+                ))}
+              </Box>
             </Paper>
           </Grid>
           <Grid item xs={6} sm={3}>
@@ -189,11 +203,18 @@ export default function ModalBody({ open, handleClose, config }) {
               <Typography variant="h5" gutterBottom className={classes.projectSubTitle}>
                 Back-End
               </Typography>
-              {config.dialog.backEnd.map((line) => (
-                <Typography variant="body1">
-                  {line}  
-                </Typography>
-              ))}
+              <Box
+                display="flex"
+                flexDirection="column"
+                flexWrap="wrap"
+                height="100px"
+              >
+                {config.dialog.backEnd.map((line) => (
+                  <Typography variant="body1">
+                    {line}  
+                  </Typography>
+                ))}
+              </Box>
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -218,7 +239,7 @@ export default function ModalBody({ open, handleClose, config }) {
                   size='large'
                   onClick={handleClickDIC}
                 >
-                  Image Carousel
+                  View Images
                 </Button>
               </Box>
             </Paper>
