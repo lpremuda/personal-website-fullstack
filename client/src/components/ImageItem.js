@@ -9,7 +9,7 @@ export default function ImageItem({ config }) {
     imageContainer: {
       height: '100%',
       width: '100%',
-      padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
+      // padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
       boxSizing: 'border-box',
       display: 'flex',
       flexDirection: 'column', // needs to switch to row if & > img has height: 100%

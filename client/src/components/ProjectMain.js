@@ -17,20 +17,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
   },
-  projectTitleContainer: {
-    marginTop: `${theme.spacing(4)}px`,
+  boldFont: {
     fontWeight: 700,
   },
-  projectDescriptionContainer: {
-    margin: `${theme.spacing(4)}px 0`,
-  },
-  buttonsContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    margin: `${theme.spacing(4)}px 0`,
-  },
 }))
+
+const marginY = 4
 
 export default function ProjectMain({ config }) {
   const classes = useStyles()
@@ -47,17 +39,28 @@ export default function ProjectMain({ config }) {
 
   return (
     <div className={classes.projectMainContainer}>
-      <div className={classes.projectTitleContainer}>
-        <Typography display="block" variant="h2" align="center" className={classes.projectTitleContainer}>
+      <Box
+        my={marginY}
+        fontWeight={700}
+      >
+        <Typography display="block" variant="h2" align="center" className={classes.boldFont}>
           {config.hero.title}
         </Typography>
-      </div>
-      <div className={classes.projectDescriptionContainer}>
-        <Typography display="block" variant="h3" align="center">
+      </Box>
+      <Box
+        my={marginY}
+      >
+        <Typography display="block" variant="h4" align="center">
           {config.hero.description}
         </Typography>
-      </div>
-      <div className={classes.buttonsContainer}>
+      </Box>
+      <Box
+        display="flex"
+        flexDirection="row"
+        justifyContent="space-evenly"
+        mx={0}
+        my={marginY}
+      >
         <Button
           variant="contained"
           color="primary"
@@ -68,7 +71,7 @@ export default function ProjectMain({ config }) {
         </Button>
         <ModalBody3 open={open} handleClose={handleClose} config={config} />
         <DemoButton href={config.links.demo} />
-      </div>
+      </Box>
     </div>
   )
 }

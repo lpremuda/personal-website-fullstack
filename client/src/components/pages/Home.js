@@ -131,7 +131,7 @@ export default function Home({ enableShowNavProjects }) {
             <ProjectRow id="project3" imageFirst={false} config={configProjects.personalWebsite} />
             <ProjectRow id="project4" imageFirst={true} config={configProjects.reactSignIn} />
 
-            <Grid item xs={12}
+            {/* <Grid item xs={12}
             container spacing={projGridRowSpacing}
             className={classes.projectGridRow}
             >
@@ -245,7 +245,7 @@ export default function Home({ enableShowNavProjects }) {
               >
                 <ProjectMain config={configProjects.reactSignIn} />
               </GridItem>
-            </Grid>
+            </Grid> */}
 
             <GridItem
               id="resume"
