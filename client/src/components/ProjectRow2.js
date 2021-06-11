@@ -15,7 +15,6 @@ export default function ProjectRow2({ id, imageFirst, config }) {
   const theme = useTheme()
 
   const gridItemProjectMinHeight = "70vh"
-  const gridItemProjectHeight = "70vh"
   const projGridRowSpacing = 10 // 10 is max
   const backgroundColor = imageFirst ? theme.palette.primary.light : "#fff"
   const projectGridSize = 6
@@ -31,15 +30,11 @@ export default function ProjectRow2({ id, imageFirst, config }) {
   const ProjectGridItem = () => {
     return (
       <GridItem2
-        // id={id}
-        // position={imageFirst ? "1" : "0"}
-        // position={0}
         imageFirst={imageFirst}
         xs={12}
-        sm={6}
+        sm={12}
         md={projectGridSize}
         minHeight={gridItemProjectMinHeight}
-        // height={gridItemProjectHeight}
       >
         <ProjectMain config={config} />
       </GridItem2>
@@ -49,13 +44,11 @@ export default function ProjectRow2({ id, imageFirst, config }) {
   const ImageGridItem = () => {
     return (
       <GridItem2
-        // position={1}
         imageFirst={imageFirst}
         xs={12}
-        sm={6}
+        sm={12}
         md={12-projectGridSize}
         minHeight={gridItemProjectMinHeight}
-        // height={gridItemProjectHeight}
       >
         <ImageItem config={config} />
       </GridItem2>

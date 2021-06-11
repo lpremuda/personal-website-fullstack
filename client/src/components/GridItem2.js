@@ -32,7 +32,7 @@ export default function GridItem2({ children, position, imageFirst, xs, sm, md, 
       justifyContent: 'space-around',
       alignItems: 'center',
       order: orderLarge,
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         order: orderMobile,
       },
       backgroundColor: bgColor,

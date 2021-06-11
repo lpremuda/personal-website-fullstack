@@ -108,7 +108,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Zoom ref={ref} {...props} />;
 });
 
-export default function ModalBody({ open, handleClose, config }) {
+export default function ModalBody3({ open, handleClose, config }) {
   const classes = useStyles()
   const theme = useTheme()
 

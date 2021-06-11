@@ -36,42 +36,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  heroBoxSubContainer: {
-    height: '90%',
-    width: '90%',
-
-    border: '2px solid red',
-
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-  },
-  heroBoxSub2Container: {
-    height: '100%',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    border: '2px solid orange',
-  },
   heroGridContainer: {
     height: '100%',
     boxSizing: 'border-box',
     border: '2px solid yellow',
-  },
-  heroGridItem: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    maxHeight: '200px',
-    border: '2px solid blue',
-  },
-  gridItemDiv: {
-    backgroundColor: 'purple',
-    flex: '1 1 20px',
-    height: '50px',
   },
   projectsGridContainer: {
     width: '100%',
@@ -99,22 +67,7 @@ export default function Home2({ enableShowNavProjects }) {
       {/* HERO     */}
       <div id="homeTop" className={classes.heroMainContainer}>
         <Box className={classes.heroBoxContainer}>
-          <Box className={classes.heroBoxSubContainer}>
-            <Box className={classes.heroBoxSub2Container}>
-              {/* <span>Welcome to Website</span> */}
-              <Grid
-                container
-                direction="row"
-                justify="flex-end"
-                alignItems="flex-end"
-                spacing={4}>
-                <Grid item xs={6} children={<div className={classes.gridItemDiv} />} className={classes.heroGridItem} />
-                <Grid item xs={6} children={<div className={classes.gridItemDiv} />} className={classes.heroGridItem} />
-                <Grid item xs={6} children={<div className={classes.gridItemDiv} />} className={classes.heroGridItem} />
-                <Grid item xs={6} children={<div className={classes.gridItemDiv} />} className={classes.heroGridItem} />
-              </Grid>
-            </Box>
-          </Box>
+
         </Box>
       </div>
       {/* PROJECTS */}

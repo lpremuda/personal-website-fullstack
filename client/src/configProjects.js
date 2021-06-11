@@ -16,7 +16,7 @@ export const configProjects = {
         "React-based sign-in app. User is able to Sign Up, Log In, Recover Password, Change Username, Change Password, and Sign Out.",
         "React Bootstrap used to accelerate development to make a simple and concise UI/UX layout.",
         "Firebase Authentication API used to simplify user authentication. Context used to pass user information and Firebase authentication functions. Prevents users that are not signed in from getting to the dashboard page.",
-        "Deployed to Heroku",
+        "Deployed to Heroku.",
       ],
       frontEnd: [
         "React",
@@ -70,7 +70,7 @@ export const configProjects = {
         "RESTful API for creating, reading, updating, and deleting books and authors per user input.",
         "MongoDB using Mongoose.js to create Author and Book schema and models, as well as database queries. Database deployed with MongoDB Atlas.",
         "EJS Embedded Javascript templating to dynamically create HTML files on server side.",
-        "Deployed to Heroku",
+        "Deployed to Heroku.",
       ],
       frontEnd: [
         "EJS",
@@ -82,6 +82,8 @@ export const configProjects = {
         "Express.js",
         "MongoDB",
         "Mongoose.js",
+        "Another",
+        "Framework",
       ],
       imageFiles: [
         "url(images/YourLibrary/YourLibrary-Index.jpg)",
@@ -108,7 +110,7 @@ export const configProjects = {
   personalWebsite: {
     hero: {
       title: "LUCAS.PREMUDA Portfolio Website",
-      description: "Full-stack React-based, responsive portfolio website with Material UI on front end and Node/Express on back end",
+      description: "Full-stack React-based, responsive portfolio website with Material UI front-end and Node/Express back-end",
       image: {
         src: "images/react-firebase-log-in.jpg", //FIX
         alt: "react-firebase-log-in.jpg" //FIX
@@ -121,7 +123,7 @@ export const configProjects = {
         "Heroku Node.js buildpack starts Express server and initiates create-react-app build command, which creates static files to serve.",
         "Express serves static files and creates route for a contact form submission to initiate a Nodemailer email to be sent.",
         "Nodemailer module using Sendinblue SMTP server to send website owner an email with users' name, email address, and message when the contact form is submitted.",
-        "Deployed to Heroku",
+        "Deployed to Heroku.",
       ],
       frontEnd: [
         "React",

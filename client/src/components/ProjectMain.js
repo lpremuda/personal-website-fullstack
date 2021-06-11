@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 
 import DemoButton from './DemoButton'
 import ModalBody3 from './ModalBody3'
+import ModalBody4 from './ModalBody4'
 
 import { makeStyles } from '@material-ui/styles'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
-import Modal from '@material-ui/core/Modal'
 import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
@@ -69,7 +69,7 @@ export default function ProjectMain({ config }) {
         >
           More Detail
         </Button>
-        <ModalBody3 open={open} handleClose={handleClose} config={config} />
+        <ModalBody4 open={open} handleClose={handleClose} config={config} />
         <DemoButton href={config.links.demo} />
       </Box>
     </div>
