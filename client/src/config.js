@@ -23,6 +23,13 @@ export const config = {
     offset: navBarOffset,
     duration: 750,
   },
+  hero: {
+    name: {
+      fontWeight: 800,
+      colorMain: '#fff',
+      colorOff: 'red',
+    }
+  },
   Footer: {
     link: {
       darkenValue: 0.14,

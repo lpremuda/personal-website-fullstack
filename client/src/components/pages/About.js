@@ -91,7 +91,7 @@ export default function About({ disableShowNavProjects }) {
               <Typography variant="body1">
                 I've been working as an engineer in the infrared imaging industry, primarily focused on test, design, and camera system architecture.
                 Throughout my career, I've mostly enjoyed and focused on software, image processing, and data analysis.
-                I'm now focused on taking my career in the direction of strictly software engineering, particularly web development, which I have enjoyed most out of all of my software endeavors.
+                I'm focused on taking my career in the direction of strictly software engineering, particularly web development, which I have enjoyed most out of all of my software endeavors.
                 During my time learning and working with web development, I have focused more on front-end development, such as React.js,
               <Typography>
               </Typography>

@@ -100,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1.5),
     cursor: 'pointer',
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.fontSize,
+    fontSize: '1.1rem',
   },
   navLinkMain: {
     height: config.Navbar.main.height,
