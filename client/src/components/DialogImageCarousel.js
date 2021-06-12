@@ -1,25 +1,15 @@
 import React from 'react'
 
-import { config } from '../config'
-import DemoButton from './DemoButton'
-
 import Carousel from 'react-material-ui-carousel'
 
-import { makeStyles, darken, useTheme } from '@material-ui/core/styles'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
-import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
-import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
-import Paper from '@material-ui/core/Paper'
-import Slide from '@material-ui/core/Slide'
-import Typography from '@material-ui/core/Typography'
 import Zoom from '@material-ui/core/Zoom'
 
 import blueGrey from '@material-ui/core/colors/blueGrey'
 import CancelIcon from '@material-ui/icons/Cancel'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import { ListItemSecondaryAction } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   dialog: {

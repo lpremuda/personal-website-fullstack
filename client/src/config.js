@@ -1,6 +1,3 @@
-import React from 'react'
-import { useTheme } from '@material-ui/styles'
-
 const navBarHeight = 64
 const navBarCollapseHeight = 64
 const navBarOffset = -navBarHeight - navBarCollapseHeight

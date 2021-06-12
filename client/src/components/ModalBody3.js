@@ -11,7 +11,6 @@ import Dialog from '@material-ui/core/Dialog'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import Paper from '@material-ui/core/Paper'
-import Slide from '@material-ui/core/Slide'
 import Typography from '@material-ui/core/Typography'
 import Zoom from '@material-ui/core/Zoom'
 

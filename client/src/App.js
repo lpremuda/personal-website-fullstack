@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Home from './components/pages/Home'
 import Home2 from './components/pages/Home2'
 import Navbar2 from './components/Navbar2'
+import ScrollToTop from './components/ScrollToTop'
 import Sidebar from './components/Sidebar'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -49,7 +50,7 @@ function App() {
   return (
     <div className={classes.app} >
       <Router>
-
+        <ScrollToTop />
         <div>
           <Navbar2 toggleDrawer={toggleDrawer} showNavProjects={showNavProjects} />
           <Sidebar toggleDrawer={toggleDrawer} dwrOpen={dwrOpen} />
@@ -60,10 +61,10 @@ function App() {
             <Route path="/" exact>
               <Home2 enableShowNavProjects={enableShowNavProjects} />
             </Route>
-            <Route path="/contact" >
+            <Route path="/contact" exact>
               <Contact disableShowNavProjects={disableShowNavProjects} />
             </Route>
-            <Route path="/about" >
+            <Route path="/about" exact>
               <About disableShowNavProjects={disableShowNavProjects} />
             </Route>
           </Switch>

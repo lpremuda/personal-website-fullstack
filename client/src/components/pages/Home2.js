@@ -4,8 +4,6 @@ import { config } from '../../config'
 import { configProjects } from '../../configProjects'
 
 import GridItem from '../GridItem'
-import ImageItem from '../ImageItem'
-import ProjectMain from '../ProjectMain'
 import ProjectRow from '../ProjectRow'
 import ProjectRow2 from '../ProjectRow2'
 import ResumeMain from '../ResumeMain'
@@ -15,10 +13,10 @@ import ResumeMain from '../ResumeMain'
 import heroImage from '../../images/florian-schonbrunner-TS6-Mqg_Q5E-unsplash.jpg'
 
 import { makeStyles, useTheme } from '@material-ui/core/styles'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Box from '@material-ui/core/Box'
 import Collapse from '@material-ui/core/Collapse'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import HomeIcon from '@material-ui/icons/Home';
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
@@ -73,6 +71,8 @@ export default function Home2({ enableShowNavProjects }) {
   const classes = useStyles()
   const theme = useTheme()
 
+  const sm = useMediaQuery(theme => theme.breakpoints.down('sm'))
+
   const [enCollapse, setEnCollapse] = useState(false)
 
   useEffect(() => {
@@ -91,15 +91,24 @@ export default function Home2({ enableShowNavProjects }) {
               display="flex"
               alignItems="center"
             >
-                      <Collapse
-            in={enCollapse}
-            {...(enCollapse ? { timeout: 1000 } : {})}
-            collapsedHeight={0}
-          >
-              <Typography variant="h1" className={classes.name}>
-                <span style={{ color: config.hero.name.colorMain }}>LUCAS</span>
-                <span style={{ color: config.hero.name.colorOff }}>PREMUDA</span>
-              </Typography>
+              <Collapse
+                in={enCollapse}
+                {...(enCollapse ? { timeout: 1000 } : {})}
+                collapsedHeight={0}
+              >
+                <Box
+                  display="flex"
+                  flexDirection={sm ? "column" : "row"}
+                  justifyContent="center"
+                  alignItems="center"
+                > 
+                  <Typography variant="h1" className={classes.name}>
+                    <span style={{ color: config.hero.name.colorMain }}>LUCAS</span>
+                  </Typography>
+                  <Typography variant="h1" className={classes.name}>
+                    <span style={{ color: config.hero.name.colorOff }}>PREMUDA</span>
+                  </Typography>
+                </Box>
               </Collapse>
             </Box>
           

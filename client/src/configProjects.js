@@ -1,5 +1,3 @@
-import { useTheme } from '@material-ui/styles'
-
 export const configProjects = {
   reactSignIn: {
     hero: {

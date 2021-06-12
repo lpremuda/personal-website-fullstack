@@ -1,6 +1,5 @@
 import React from 'react'
 
-import GridItem from './GridItem'
 import GridItem2 from './GridItem2'
 import ImageItem from './ImageItem'
 import ProjectMain from './ProjectMain'

@@ -1,17 +1,8 @@
 import React from 'react'
 
-import { config } from '../config'
-
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
-import HomeIcon from '@material-ui/icons/Home';
-import Typography from '@material-ui/core/Typography'
 import TelegramIcon from '@material-ui/icons/Telegram';
-
-import { IconContext } from 'react-icons'
-import { GrSend } from 'react-icons/gr'
-import { FcBookmark } from 'react-icons/fc'
-
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -24,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     marginRight: theme.spacing(0.5),
-    // fontSize: '1rem',
   }
 }));
 
