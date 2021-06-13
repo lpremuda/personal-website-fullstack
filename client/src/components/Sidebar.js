@@ -1,25 +1,30 @@
 import React from 'react';
+
+import ScrollLinkCustom from './ScrollLinkCustom'
+
+import { Link, useLocation } from 'react-router-dom'
+
 import { makeStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
+
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import { Link } from 'react-router-dom'
-import ScrollLinkCustom from './ScrollLinkCustom'
 import CancelIcon from '@material-ui/icons/Cancel'
 
 const useStyles = makeStyles((theme) => ({
   list: {
     width: '75vw',
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     flexGrow: 1,
   },
   sideBarLink: {
     color: 'inherit',
     fontFamily: theme.typography.fontFamily,
-    fontSize: '1.5rem',
+    fontSize: '1.8rem',
+    fontWeight: 500,
     justifyContent: 'center', // centers the elements w/ class called out in ListItem element
     textAlign: 'center',      // centers the elements w/ class called out in Link element
     flexGrow: 1,              // centers the elements w/ class called out in Link element
@@ -46,7 +51,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Sidebar({ toggleDrawer, dwrOpen }) {
-  const classes = useStyles();
+  const classes = useStyles()
+  const location = useLocation()
+
+  const projectNumbers = [1,2,3,4]
 
   const list = () => (
     <div
@@ -58,7 +66,7 @@ export default function Sidebar({ toggleDrawer, dwrOpen }) {
       <List>
         <ListItem button key="icon" className={classes.iconContainer} >
             <ListItemIcon className={classes.icon}>
-              <CancelIcon />
+              <CancelIcon fontSize="large" />
             </ListItemIcon>
         </ListItem>
         <ListItem button key="home" className={classes.sideBarLink} >
@@ -67,23 +75,30 @@ export default function Sidebar({ toggleDrawer, dwrOpen }) {
       </List>
       <Divider className={classes.divider}/>
       <List>
-        <ListItem button key="project1" className={classes.sideBarLink}>
-          <ScrollLinkCustom to="project1" text="Project 1" closeDrawerFunc={toggleDrawer(false)} />
-        </ListItem>
-        <ListItem button key="project2" className={classes.sideBarLink}>
-          <ScrollLinkCustom to="project2" text="Project 2" closeDrawerFunc={toggleDrawer(false)} />
-        </ListItem>
-        <ListItem button key="project3" className={classes.sideBarLink}>
-          <ScrollLinkCustom to="project3" text="Project 3" closeDrawerFunc={toggleDrawer(false)} />
-        </ListItem>
-        <ListItem button key="project4" className={classes.sideBarLink}>
-          <ScrollLinkCustom to="project4" text="Project 4" closeDrawerFunc={toggleDrawer(false)} />
-        </ListItem>
+        {projectNumbers.map((num) => (
+          <ListItem button key={`project${num}`} className={classes.sideBarLink}>
+            {location.pathname === "/"
+            ?
+              <ScrollLinkCustom to={`project${num}`} text={`Project ${num}`} closeDrawerFunc={toggleDrawer(false)} />
+            :
+              <Link to={`/#project${num}`} className={classes.link}>
+                {`Project ${num}`}
+              </Link>
+            }
+          </ListItem>
+        ))}
       </List>
       <Divider className={classes.divider}/>
       <List>
         <ListItem button key="resume" className={classes.sideBarLink}>
-          <ScrollLinkCustom to="resume" text="Resume" closeDrawerFunc={toggleDrawer(false)} />
+          {location.pathname === "/"
+          ?
+            <ScrollLinkCustom to="resume" text="Resume" closeDrawerFunc={toggleDrawer(false)} />
+          :
+            <Link to="/#resume" className={classes.link}>
+              Resume
+            </Link>
+          }
         </ListItem>
         <ListItem button key="contact" className={classes.sideBarLink}>
           <Link className={classes.link} to="/contact" color="inherit">Contact</Link>

@@ -3,7 +3,7 @@ import React from 'react'
 import { config } from '../config'
 import ScrollLinkCustom from './ScrollLinkCustom'
 
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { makeStyles, darken } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -61,6 +61,9 @@ const mbFooterIcon = 1
 
 export default function Footer() {
   const classes = useStyles()
+  const location = useLocation()
+
+  const projectNumbers = [1,2,3,4]
 
   return (
     <footer>
@@ -69,47 +72,46 @@ export default function Footer() {
           <Grid container spacing={0} className={classes.footerGridContainer}>
             <Grid item xs={0} sm={3} />
             <Grid item xs={4} sm={3} className={classes.footerGridItem}>
-              <Box mb={mbFooterLink}>
-                <ScrollLinkCustom
-                  to="project1"
-                  text="Project 1"
-                  showActive={false}
-                  className={classes.footerLink} 
-                />
-              </Box>
-              <Box mb={mbFooterLink}>
-                <ScrollLinkCustom
-                  to="project2"
-                  text="Project 2"
-                  showActive={false}
-                  className={classes.footerLink}
-                />
-              </Box>
-              <Box mb={mbFooterLink}>
-                <ScrollLinkCustom
-                  to="project3"
-                  text="Project 3"
-                  showActive={false}
-                  className={classes.footerLink} 
-                />
-              </Box>
-              <Box mb={mbFooterLink}>
-                <ScrollLinkCustom
-                  to="project4"
-                  text="Project 4"
-                  showActive={false}
-                  className={classes.footerLink} 
-                />
-              </Box>
+              {/* PROJECT LINKS */}
+              {projectNumbers.map((num) => (
+                <Box mb={mbFooterLink}>
+                  {location.pathname === '/'
+                  ?
+                    <ScrollLinkCustom
+                      to={`project${num}`}
+                      text={`Project ${num}`}
+                      showActive={false}
+                      className={classes.footerLink} 
+                    />
+                  :
+                    <Link
+                      to={`/#project${num}`}
+                      className={classes.footerLink}
+                    >
+                      {`Project ${num}`}
+                    </Link>
+                  }
+                </Box>
+              ))}
             </Grid>
             <Grid item xs={4} sm={3} className={classes.footerGridItem}>
               <Box mb={mbFooterLink}>
-                <ScrollLinkCustom
-                  to="resume"
-                  text="Resume"
-                  showActive={false}
-                  className={classes.footerLink} 
-                />
+                {location.pathname === '/'
+                  ?
+                    <ScrollLinkCustom
+                      to="resume"
+                      text="Resume"
+                      showActive={false}
+                      className={classes.footerLink} 
+                    />
+                  :
+                    <Link
+                      to="/#resume"
+                      className={classes.footerLink}
+                    >
+                      Resume
+                    </Link>
+                }
               </Box>
               <Box mb={mbFooterLink}>
                 <Link to="/contact" color="inherit" className={classes.footerLink}>

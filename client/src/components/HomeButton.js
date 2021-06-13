@@ -28,7 +28,7 @@ export default function HomeButton() {
   return (
     <Button className={classes.button}>
       <HomeIcon fontSize="large" className={classes.icon} />
-      <Box fontWeight={800} fontSize="1.5rem">
+      <Box fontWeight={800} fontSize="1.9rem">
         {/* <Typography variant="h6" fontWeight={800}> */}
         <span style={{ color: config.hero.name.colorMain }}>LUCAS</span>
         <span style={{ color: config.hero.name.colorOff }}>PREMUDA</span>

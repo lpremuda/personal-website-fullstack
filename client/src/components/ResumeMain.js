@@ -115,13 +115,6 @@ export default function ProjectMain() {
             </div>
           </Grid>
         </Grid>
-        {/* <Grid item xs={12} container alignItems="center" justify="flex-start" className={classes.buttonsContainer}>
-          <div className={classes.buttonsContainer}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <DownloadButton />
-            </div>
-          </div>
-        </Grid> */}
       </Grid>
     </Container>
   )

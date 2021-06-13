@@ -13,6 +13,7 @@ export const config = {
     link: {
       darkenValue: 0.04,
     },
+    navBarOffset: navBarOffset
   },
   scrollLink: {
     spy: true,
@@ -31,5 +32,5 @@ export const config = {
     link: {
       darkenValue: 0.14,
     }
-  }
+  },
 }

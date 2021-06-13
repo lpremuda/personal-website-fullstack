@@ -18,20 +18,13 @@ import Toolbar from '@material-ui/core/Toolbar'
 
 const useStyles = makeStyles((theme) => ({
   toolbarContainer: {
-    // display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '90%',
-    maxWidth: theme.breakpoints.values['xl'],
+    maxWidth: '1500px',
     margin: 'auto',
   },
-  // // Upper Nav Bar
-  // toolbar: {
-  //   // margin: 'auto',
-  //   display: 'flex',
-  //   justifyContent: 'center',
-  //   flexGrow: 1,
-  // },
+  // Upper Nav Bar
   homeLink: {
     textDecoration: 'none',
     color: 'inherit',
@@ -130,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
   },
   projectsDropDownWrapper: {
     width: '90%',
-    maxWidth: theme.breakpoints.values['lg'],
+    maxWidth: theme.breakpoints.values['md'],
     margin: 'auto',
   },
   projectsDropDown: {
@@ -240,11 +233,6 @@ export default function Navbar({ showNavProjects, toggleDrawer }) {
               </Box>
           </Toolbar>
         </div>
-        {/* {(onProjectsMenu || onProjectsDropDown) && 
-        <Box onMouseEnter={onMouseEnterFunc} onMouseLeave={onMouseLeaveFunc} className={classes.projectsDropDown}>
-
-        </Box>} */}
-      {/* <Collapse in={onProjectsMenu || onProjectsDropDown}> */}
       <Collapse in={location.pathname === "/"} className={classes.collapseContainer}>
         <Box onMouseEnter={onMouseEnterFunc} onMouseLeave={onMouseLeaveFunc} className={classes.projectsDropDownWrapper}>
           <Box className={classes.projectsDropDown}>
