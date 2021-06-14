@@ -1,6 +1,7 @@
 import { blue } from '@material-ui/core/colors';
 import { purple } from '@material-ui/core/colors';
 import { brown } from '@material-ui/core/colors';
+import { orange } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -14,7 +15,16 @@ const theme = createMuiTheme({
         //     // main: "#424242"
 
         // }
-        primary: purple,
+        // primary: orange,
+        primary: {
+          // main: '#311b92' //deep puple
+          // main: '#455a64' //blue grey
+          // main: '#00796b' //teal
+          main: '#3d5afe' //dark pink
+        },
+        secondary: {
+          main: '#ffc107'
+        }
     },
     // background: {
     //     default: "#fff"

@@ -1,9 +1,12 @@
 import React from 'react'
 
 import { config } from '../config'
+
 import ScrollLinkCustom from './ScrollLinkCustom'
+import WebsiteIcon from './WebsiteIcon'
 
 import { Link, useLocation } from 'react-router-dom'
+import { Link as ScrollLink } from 'react-scroll'
 
 import { makeStyles, darken } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -14,11 +17,6 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
-  footer: {
-    height: '1000px',
-    backgroundColor: 'black',
-    color: 'white',
-  },
   footerBox: {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
@@ -49,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   iconLink: {
+    cursor: 'pointer',
     color: 'inherit',
     '&:hover': {
       color: darken(theme.palette.primary.contrastText, config.Footer.link.darkenValue)
@@ -70,8 +69,30 @@ export default function Footer() {
       <Box className={classes.footerBox}>
         <Container className={classes.footerContainer}>
           <Grid container spacing={0} className={classes.footerGridContainer}>
-            <Grid item xs={0} sm={3} />
-            <Grid item xs={4} sm={3} className={classes.footerGridItem}>
+            <Grid item xs={3} className={classes.footerGridItem}>
+              {location.pathname === "/"
+              ?
+                <ScrollLink
+                      activeClass={config.scrollLink.activeClass}
+                      to="homeTop"
+                      spy={config.scrollLink.spy}
+                      smooth={config.scrollLink.smooth}
+                      offset={config.scrollLink.offset}
+                      duration={config.scrollLink.duration}
+                      className={classes.iconLink}
+                >
+                      <WebsiteIcon />
+                </ScrollLink>
+              :
+                <Link
+                  to="/#homeTop"
+                  className={classes.iconLink}
+                >
+                  <WebsiteIcon />
+                </Link>
+              }
+            </Grid>
+            <Grid item xs={3} className={classes.footerGridItem}>
               {/* PROJECT LINKS */}
               {projectNumbers.map((num) => (
                 <Box mb={mbFooterLink}>
@@ -94,7 +115,7 @@ export default function Footer() {
                 </Box>
               ))}
             </Grid>
-            <Grid item xs={4} sm={3} className={classes.footerGridItem}>
+            <Grid item xs={3} className={classes.footerGridItem}>
               <Box mb={mbFooterLink}>
                 {location.pathname === '/'
                   ?
@@ -124,7 +145,7 @@ export default function Footer() {
                 </Link>
               </Box>
             </Grid>
-            <Grid item xs={4} sm={3} className={classes.footerGridItem}>
+            <Grid item xs={3} className={classes.footerGridItem}>
               <Box mb={mbFooterIcon}>
                 <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/lucas-premuda-151b1a65" className={classes.iconLink}>
                   <LinkedInIcon fontSize="large"/>

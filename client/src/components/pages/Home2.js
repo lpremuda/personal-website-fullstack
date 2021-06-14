@@ -10,7 +10,8 @@ import ResumeMain from '../ResumeMain'
 // import heroImage from '../../images/christopher-gower-m_HRfLhgABo-unsplash.jpg'
 // import heroImage from '../../images/casey-horner-O0R5XZfKUGQ-unsplash.jpg'
 // import heroImage from '../../images/marek-piwnicki-UlMIs4XFNqY-unsplash.jpg'
-import heroImage from '../../images/florian-schonbrunner-TS6-Mqg_Q5E-unsplash.jpg'
+// import heroImage from '../../images/florian-schonbrunner-TS6-Mqg_Q5E-unsplash.jpg'
+import heroImage from '../../images/ryan-park-LN8lAZsM-NU-unsplash.jpg'
 
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
@@ -25,9 +26,9 @@ import { Link as ScrollLink } from 'react-scroll'
 
 const useStyles = makeStyles((theme) => ({
   heroMainContainer: {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.5)), url(${heroImage})`,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url(${heroImage})`,
     backgroundSize: 'cover',
-    backgroundPosition: '50% 30%',
+    backgroundPosition: '50% 55%',
     backgroundRepeat: 'no-repeat',
     height: '100vh',
     fontSize: '4rem',
@@ -72,6 +73,7 @@ export default function Home2({ enableShowNavProjects }) {
   const theme = useTheme()
 
   const sm = useMediaQuery(theme => theme.breakpoints.down('sm'))
+  const up_lg = useMediaQuery(theme => theme.breakpoints.up('lg'))
 
   const [enCollapse, setEnCollapse] = useState(false)
 
@@ -98,16 +100,27 @@ export default function Home2({ enableShowNavProjects }) {
               >
                 <Box
                   display="flex"
-                  flexDirection={sm ? "column" : "row"}
-                  justifyContent="center"
+                  flexDirection="column"
                   alignItems="center"
-                > 
-                  <Typography variant="h1" className={classes.name}>
-                    <span style={{ color: config.hero.name.colorMain }}>LUCAS</span>
-                  </Typography>
-                  <Typography variant="h1" className={classes.name}>
-                    <span style={{ color: config.hero.name.colorOff }}>PREMUDA</span>
-                  </Typography>
+                >
+                  <Box
+                    display="flex"
+                    flexDirection={sm ? "column" : "row"}
+                    justifyContent="center"
+                    alignItems="center"
+                  > 
+                    <Typography variant="h1" className={classes.name}>
+                      <span style={{ color: config.hero.name.colorMain }}>LUCAS</span>
+                    </Typography>
+                    <Typography variant="h1" className={classes.name}>
+                      <span style={{ color: config.hero.name.colorOff }}>PREMUDA</span>
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant={up_lg ? "h4": "h5"} >
+                      Software/Web Developer
+                    </Typography>
+                  </Box>
                 </Box>
               </Collapse>
             </Box>

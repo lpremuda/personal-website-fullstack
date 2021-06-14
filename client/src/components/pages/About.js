@@ -100,10 +100,10 @@ export default function About({ disableShowNavProjects }) {
         </Grid>
         <Grid item xs={12} md={6} className={classes.aboutMeText}>
           <Box className={classes.aboutMeBox}>
-            <Typography variant="h2" display="inline" style={{ fontWeight: '600'}}>
+            <Typography variant="h2" display="inline" style={{ fontWeight: '700'}}>
               <span>Lucas </span>
             </Typography>
-            <Typography variant="h2" display="inline" style={{ fontWeight: '600'}}>
+            <Typography variant="h2" display="inline" style={{ fontWeight: '700'}}>
               <span style={{ color: config.hero.name.colorOff }}>Premuda</span>
             </Typography>
             <Typography variant="h4" className={classes.aboutMeJobTitle} color="textSecondary">
@@ -138,9 +138,9 @@ export default function About({ disableShowNavProjects }) {
               </Typography>
               <Box className={classes.aboutMeExperienceContainer}>
                 <Box mr={8} className={classes.aboutMeExperienceColumn}>
-                  <Typography variant="body1">Javascript (???/ES6)</Typography>
-                  <Typography variant="body1">HTML</Typography>
-                  <Typography variant="body1">CSS</Typography>
+                  <Typography variant="body1">Javascript (ES6)</Typography>
+                  <Typography variant="body1">HTML5</Typography>
+                  <Typography variant="body1">CSS3</Typography>
                   <Typography variant="body1">Node.js</Typography>
                   <Typography variant="body1">Express.js</Typography>
                   <Typography variant="body1">React.js</Typography>
