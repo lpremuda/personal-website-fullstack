@@ -25,7 +25,7 @@ export const config = {
     name: {
       fontWeight: 800,
       colorMain: '#fff',
-      colorOff: 'red',
+      colorOff: 'red', // using theme.palette.secondary.main now
     }
   },
   Footer: {

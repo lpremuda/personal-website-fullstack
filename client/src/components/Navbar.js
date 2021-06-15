@@ -187,13 +187,6 @@ export default function Navbar({ showNavProjects, toggleDrawer }) {
               </div>
             </Grow>
               <Box className={classes.grow} />
-                
-              {/* {showNavProjects &&
-              <>
-                  <ProjectsMenu2 customItemStyle={classes.navProjectsMenu} setOnProjectsMenu={setOnProjectsMenu} />
-                  <ProjectsScrollLinks customItemStyle={classes.navProjects}/>
-              </>} */}
-              {/* <Box className={classes.grow} /> */}
               <IconButton
                 color="inherit"
                 edge="end"
@@ -203,46 +196,31 @@ export default function Navbar({ showNavProjects, toggleDrawer }) {
                   <MenuIcon />
               </IconButton>
               <Box className={classes.navBarEnd}>
-                {/* <Grow
-                  in={location.pathname === "/"}
-                  {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 1750 } : {})}
-                >
-                  <div>
-                    <ScrollLinkCustom
-                      to="resume"
-                      text="Resume"
-                      showActive={true}
-                      className={`${classes.navLinkBase} ${classes.navLinkMain}`}
-                    />
-                  </div> 
-                </Grow> */}
-                  <Box>
-                    {location.pathname === '/'
-                      ?
-                        <ScrollLinkCustom
-                          to="resume"
-                          text="Resume"
-                          showActive={false}
-                          className={`${classes.navLinkBase} ${classes.navLinkMain}`}
-                        />
-                      :
-                        <Link
-                          to="/#resume"
-                          className={`${classes.navLinkBase} ${classes.navLinkMain}`}
-                        >
-                          Resume
-                        </Link>
-                    }
-                  </Box>
+                <Box>
+                  {location.pathname === '/'
+                    ?
+                      <ScrollLinkCustom
+                        to="resume"
+                        text="Resume"
+                        showActive={false}
+                        className={`${classes.navLinkBase} ${classes.navLinkMain}`}
+                      />
+                    :
+                      <Link
+                        to="/#resume"
+                        className={`${classes.navLinkBase} ${classes.navLinkMain}`}
+                      >
+                        Resume
+                      </Link>
+                  }
+                </Box>
                 <Grow
-                  // in={location.pathname === "/"}
                   in={true}
                   {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 2000 } : {})}
                 >
                   <Link className={`${classes.navLinkBase} ${classes.navLinkMain}`} to="/contact" color="inherit">Contact</Link>
                 </Grow>
                 <Grow
-                  // in={location.pathname === "/"}
                   in={true}
                   {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 2250 } : {})}
                 >
