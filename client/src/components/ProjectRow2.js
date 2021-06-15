@@ -58,7 +58,7 @@ export default function ProjectRow2({ id, imageFirst, config }) {
     <Box
       id={id}
       bgcolor={backgroundColor}
-      my={2}
+      py={2}
     >
       <Container className={classes.container}>
         <Grid

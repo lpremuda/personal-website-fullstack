@@ -86,9 +86,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
   },
   closeButton: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
+    position: 'fixed',
+    top: '5%',
+    right: '7%',
   }
 }))
 

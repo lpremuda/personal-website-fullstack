@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     boxSizing: 'border-box',
     color: theme.palette.primary.contrastText,
     marginBottom: theme.spacing(4),
+    marginTop: theme.spacing(4),
   },
   icon: {
     marginRight: theme.spacing(2)

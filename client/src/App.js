@@ -4,7 +4,6 @@ import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 import Footer from './components/Footer'
 import Home from './components/pages/Home'
-import Home2 from './components/pages/Home2'
 import Navbar2 from './components/Navbar2'
 import ScrollToTop2 from './components/ScrollToTop2'
 import Sidebar from './components/Sidebar'
@@ -59,7 +58,7 @@ function App() {
         <div className={classes.pageContent}>
           <Switch>
             <Route path="/" exact>
-              <Home2 enableShowNavProjects={enableShowNavProjects} />
+              <Home enableShowNavProjects={enableShowNavProjects} />
             </Route>
             <Route path="/contact" exact>
               <Contact disableShowNavProjects={disableShowNavProjects} />

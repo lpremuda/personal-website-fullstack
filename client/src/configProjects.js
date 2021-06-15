@@ -107,7 +107,7 @@ export const configProjects = {
 
   personalWebsite: {
     hero: {
-      title: "LUCAS.PREMUDA Portfolio Website",
+      title: "LUCAS PREMUDA Portfolio Website",
       description: "Full-stack React-based, responsive portfolio website with Material UI front-end and Node/Express back-end",
       image: {
         src: "images/react-firebase-log-in.jpg", //FIX

@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
   footerGridItem: {
     boxSizing: 'border-box',
     paddingLeft: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: theme.spacing(1),
+    },
     height: '75%',
     borderLeft: `2px solid ${theme.palette.primary.contrastText}`
   },
