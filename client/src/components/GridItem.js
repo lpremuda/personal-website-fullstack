@@ -3,19 +3,23 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
-export default function GridItem({ children, position, xs, sm, md, bgColor, minHeight, height, ...otherVars }) {
+export default function GridItem({ children, position, imageFirst, xs, sm, md, bgColor, minHeight, height, ...otherVars }) {
 
-  const pos = parseInt(position)
+  const isProject = children.type['name'].search('Project') !== -1
+  console.log(isProject)
 
-  let xsPos
-  if (Math.round((pos+1) / 2) % 2 === 0) {
-    if ( (pos % 2) === 0 ) {
-      xsPos = pos + 1
-    } else {
-      xsPos = pos - 1
-    }
+  // For mobile: if child is a project, gets 0 (i.e. goes first)
+  // Image gets 1 (goes second)
+  const orderMobile = isProject ? 0 : 1
+
+  // For large screens: if child is a project 
+  let orderLarge
+  // If its a project
+  if (isProject) {
+    orderLarge = imageFirst ? 1 : 0
+  // If its a image
   } else {
-    xsPos = pos
+    orderLarge = imageFirst ? 0 : 1
   }
 
   const useStyles = makeStyles((theme) => ({
@@ -27,9 +31,9 @@ export default function GridItem({ children, position, xs, sm, md, bgColor, minH
       height: height,
       justifyContent: 'space-around',
       alignItems: 'center',
-      order: pos,
-      [theme.breakpoints.down('xs')]: {
-        order: xsPos,
+      order: orderLarge,
+      [theme.breakpoints.down('sm')]: {
+        order: orderMobile,
       },
       backgroundColor: bgColor,
     }

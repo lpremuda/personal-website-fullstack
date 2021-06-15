@@ -4,6 +4,8 @@ import GridItem from './GridItem'
 import ImageItem from './ImageItem'
 import ProjectMain from './ProjectMain'
 
+import Box from '@material-ui/core/Box'
+import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 
@@ -11,20 +13,14 @@ export default function ProjectRow({ id, imageFirst, config }) {
 
   const theme = useTheme()
 
-  const paddingX = 10
   const gridItemProjectMinHeight = "70vh"
-  const gridItemProjectHeight = "70vh"
-  const projGridRowSpacing = 0
+  const projGridRowSpacing = 10 // 10 is max
   const backgroundColor = imageFirst ? theme.palette.primary.light : "#fff"
+  const projectGridSize = 6
 
   const useStyles = makeStyles((theme) => ({
-    projectGridRow: {
-      // backgroundColor: backgroundColor,
-      [theme.breakpoints.up('lg')]: {
-        paddingLeft: theme.spacing(paddingX),
-        paddingRight: theme.spacing(paddingX),
-      }
-
+    container: {
+      maxWidth: '1330px'
     }
   }))
 
@@ -33,13 +29,11 @@ export default function ProjectRow({ id, imageFirst, config }) {
   const ProjectGridItem = () => {
     return (
       <GridItem
-        id={id}
-        position={imageFirst ? "1" : "0"}
+        imageFirst={imageFirst}
         xs={12}
-        sm={6}
-        md={7}
+        sm={12}
+        md={projectGridSize}
         minHeight={gridItemProjectMinHeight}
-        // height={gridItemProjectHeight}
       >
         <ProjectMain config={config} />
       </GridItem>
@@ -49,12 +43,11 @@ export default function ProjectRow({ id, imageFirst, config }) {
   const ImageGridItem = () => {
     return (
       <GridItem
-        position={imageFirst ? "0" : "1"}
+        imageFirst={imageFirst}
         xs={12}
-        sm={6}
-        md={5}
+        sm={12}
+        md={12-projectGridSize}
         minHeight={gridItemProjectMinHeight}
-        // height={gridItemProjectHeight}
       >
         <ImageItem config={config} />
       </GridItem>
@@ -62,12 +55,19 @@ export default function ProjectRow({ id, imageFirst, config }) {
   }
 
   return (
-    <Grid item xs={12}
-    container spacing={projGridRowSpacing}
-    className={classes.projectGridRow}
+    <Box
+      id={id}
+      bgcolor={backgroundColor}
+      py={2}
     >
-      <ProjectGridItem />
-      <ImageGridItem />
-    </Grid>
+      <Container className={classes.container}>
+        <Grid
+        container spacing={projGridRowSpacing}
+        >
+          <ProjectGridItem />
+          <ImageGridItem />
+        </Grid>
+      </Container>
+    </Box>
   )
 }

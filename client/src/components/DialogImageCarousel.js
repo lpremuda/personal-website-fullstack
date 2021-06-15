@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   modalBodyContainer: {
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     overflow: 'visible',
     // height: '200vh',
   },
@@ -70,10 +70,9 @@ export default function DialogImageCarousel({ open, handleClose, config }) {
         display="flex"
         flexDirection="row"
         justifyContent="flex-start"
-        borderRadius={10}
+        // borderRadius={10}
         boxSizing="border-box"
-        // p={1}
-        bgColor={theme.palette.background.default}
+        bgcolor={theme.palette.primary.dark}
         className={classes.modalBodyContainer}
       >
         <IconButton

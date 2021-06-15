@@ -4,8 +4,8 @@ import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 import Footer from './components/Footer'
 import Home from './components/pages/Home'
-import Navbar2 from './components/Navbar2'
-import ScrollToTop2 from './components/ScrollToTop2'
+import Navbar from './components/Navbar'
+import ScrollToTop from './components/ScrollToTop'
 import Sidebar from './components/Sidebar'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -28,7 +28,6 @@ function App() {
 
   const [showNavProjects, setShowNavProjects] = useState(true)
   const [dwrOpen, setDwrOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home')
 
   const disableShowNavProjects = () => {
     setShowNavProjects(false)
@@ -49,9 +48,9 @@ function App() {
   return (
     <div className={classes.app} >
       <Router>
-        <ScrollToTop2 />
+        <ScrollToTop />
         <div>
-          <Navbar2 toggleDrawer={toggleDrawer} showNavProjects={showNavProjects} />
+          <Navbar toggleDrawer={toggleDrawer} showNavProjects={showNavProjects} />
           <Sidebar toggleDrawer={toggleDrawer} dwrOpen={dwrOpen} />
         </div>
 

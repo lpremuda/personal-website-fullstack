@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 
 import DemoButton from './DemoButton'
-import ModalBody3 from './ModalBody3'
-import ModalBody4 from './ModalBody4'
+import ModalBody from './ModalBody'
 
 import { makeStyles } from '@material-ui/styles'
 import Box from '@material-ui/core/Box'
@@ -69,7 +68,7 @@ export default function ProjectMain({ config }) {
         >
           More Detail
         </Button>
-        <ModalBody4 open={open} handleClose={handleClose} config={config} />
+        <ModalBody open={open} handleClose={handleClose} config={config} />
         <DemoButton href={config.links.demo} />
       </Box>
     </div>

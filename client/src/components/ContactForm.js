@@ -7,8 +7,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import { GrSend } from 'react-icons/gr'
 
 const useStyles = makeStyles((theme) => ({
   projectTitleContainer: {
@@ -122,15 +120,6 @@ export default function ContactForm() {
           />
         </Grid>
         <Grid item xs={12} container justify="center">
-          {/* <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            startIcon={<GrSend color="inherit" />}
-            size="large"
-            className={classes.submitButton}
-          >Submit
-          </Button> */}
           <SendButton />
         </Grid>
       </Grid>

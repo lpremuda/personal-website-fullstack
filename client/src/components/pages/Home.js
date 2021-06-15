@@ -3,10 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { config } from '../../config'
 import { configProjects } from '../../configProjects'
 
-import GridItem from '../GridItem'
-import GridItem2 from '../GridItem2'
 import ProjectRow from '../ProjectRow'
-import ProjectRow2 from '../ProjectRow2'
 import ResumeMain from '../ResumeMain'
 // import heroImage from '../../images/christopher-gower-m_HRfLhgABo-unsplash.jpg'
 // import heroImage from '../../images/casey-horner-O0R5XZfKUGQ-unsplash.jpg'
@@ -19,7 +16,6 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Box from '@material-ui/core/Box'
 import Collapse from '@material-ui/core/Collapse'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 
@@ -49,9 +45,6 @@ const useStyles = makeStyles((theme) => ({
   name: {
     fontWeight: config.hero.name.fontWeight,
   },
-  // projectsGridContainer: {
-  //   width: '100%',
-  // },
 }));
 
 export default function Home({ enableShowNavProjects }) {
@@ -153,22 +146,11 @@ export default function Home({ enableShowNavProjects }) {
         display="flex"
         flexDirection="column"
       >
-        <ProjectRow2 id="project1" imageFirst={false} config={configProjects.reactSignIn} />
-        <ProjectRow2 id="project2" imageFirst={true} config={configProjects.me_nLibrary} />
-        <ProjectRow2 id="project3" imageFirst={false} config={configProjects.personalWebsite} />
-        <ProjectRow2 id="project4" imageFirst={true} config={configProjects.reactSignIn} />
+        <ProjectRow id="project1" imageFirst={false} config={configProjects.reactSignIn} />
+        <ProjectRow id="project2" imageFirst={true} config={configProjects.me_nLibrary} />
+        <ProjectRow id="project3" imageFirst={false} config={configProjects.personalWebsite} />
+        <ProjectRow id="project4" imageFirst={true} config={configProjects.reactSignIn} />
         <ResumeMain />
-        {/* <Grid className={classes.projectsGridContainer} container spacing={0} >
-          <GridItem2
-            id="resume"
-            position="8"
-            xs={12}
-            bgColor="#fff"
-            minHeight="50vh"
-          >
-            <ResumeMain />
-          </GridItem2>
-        </Grid> */}
       </Box>
     </>
   )
