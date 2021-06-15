@@ -5,12 +5,12 @@ import Grid from '@material-ui/core/Grid'
 
 export default function GridItem({ children, position, imageFirst, xs, sm, md, bgColor, minHeight, height, ...otherVars }) {
 
-  const isProject = children.type['displayName'].search('Project') !== -1
+  const isProject = children.type['name'].search('Project') !== -1
   console.log(isProject)
   console.log(children.type['name'])
   console.log(children.type['name'].search('Project'))
-  console.log(children.type['displayName'])
-  console.log(children.type['displayName'].search('Project'))
+  // console.log(children.type['displayName'])
+  // console.log(children.type['displayName'].search('Project'))
 
   // For mobile: if child is a project, gets 0 (i.e. goes first)
   // Image gets 1 (goes second)
