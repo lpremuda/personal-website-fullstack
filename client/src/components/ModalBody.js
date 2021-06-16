@@ -5,6 +5,7 @@ import DemoButton from './DemoButton'
 import DialogImageCarousel from './DialogImageCarousel'
 
 import { makeStyles, darken, useTheme } from '@material-ui/core/styles'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
@@ -86,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     top: '5%',
     right: '7%',
+    zIndex: 10000,
   }
 }))
 
@@ -100,6 +102,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function ModalBody({ open, handleClose, config }) {
   const classes = useStyles()
   const theme = useTheme()
+
+  const down_sm = useMediaQuery(theme => theme.breakpoints.down('sm'))
 
   const [openDIC, setOpenDIC] = useState(false)
 
@@ -245,7 +249,7 @@ export default function ModalBody({ open, handleClose, config }) {
                   <Button
                     variant="outlined"
                     color="primary"
-                    size='large'
+                    size="large"
                     onClick={handleClickDIC}
                   >
                     View Images

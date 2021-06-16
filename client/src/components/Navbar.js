@@ -21,8 +21,16 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '90%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
     maxWidth: '1500px',
     margin: 'auto',
+  },
+  toolbar: {
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: theme.spacing(1),
+    }
   },
   // Upper Nav Bar
   homeLink: {
