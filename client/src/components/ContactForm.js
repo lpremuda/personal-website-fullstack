@@ -7,21 +7,23 @@ import { makeStyles } from '@material-ui/core/styles'
 import Alert from '@material-ui/lab/Alert'
 import AlertTitle from '@material-ui/lab/AlertTitle'
 import Box from '@material-ui/core/Box'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import Collapse from '@material-ui/core/Collapse'
-import Fade from '@material-ui/core/Fade'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
+import MuiLink from '@material-ui/core/Link'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 
 import CloseIcon from '@material-ui/icons/Close'
 
-const collapseTimeout = 500
+const collapseTimeout = 350
 
 export default function ContactForm() {
 
   const [emailSuccess, setEmailSuccess] = useState(false)
   const [emailError, setEmailError] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const useStyles = makeStyles((theme) => ({
     projectTitleContainer: {
@@ -48,13 +50,14 @@ export default function ContactForm() {
   })
 
   useEffect(() => {
-    // setEmailSuccess(false)
-    // setEmailSuccess(true)
     console.log('ContactForm useEffect() run')
   }, [])
 
   function handleSubmit(e) {
     e.preventDefault();
+    setEmailSuccess(false)
+    setEmailError(false)
+    setLoading(true)
     console.log("handleSubmit called")
     axios({
       method: "POST",
@@ -64,13 +67,16 @@ export default function ContactForm() {
       console.log('promise resolved')
       console.log(response)
       if (response.status === 200) {
-        // alert("Message Sent.");
+        setLoading(false)
+        setEmailError(false)
         setEmailSuccess(true)
         resetForm()
       } else {
           console.log('else block')
       }
     }).catch((error) => {
+      setLoading(false)
+      setEmailSuccess(false)
       setEmailError(true)
       resetForm()
       console.error("This is the error block")
@@ -82,7 +88,6 @@ export default function ContactForm() {
         console.log(error.response.headers)
       }
     })
-    // setEmailSuccess((prev) => !prev)
   }
 
   const resetForm = () => {
@@ -122,22 +127,43 @@ export default function ContactForm() {
       <Alert
         severity="success"
         action={<CloseButton onClickFunc={() => setEmailSuccess(false)} />}
-        // action={<CloseButton onClickFunc={() => alert('hello2')} />}
       >
-        <AlertTitle>Success</AlertTitle>
-        Form submitted successfully! 
+        <AlertTitle>
+          <Typography variant="h6" color="inherit">
+            Success
+          </Typography>
+        </AlertTitle>
+        <Typography variant="body1" color="inherit">
+          Email sent successfully! 
+        </Typography>
       </Alert>
     )
   }
 
-  const AlertError = () => {
+  function AlertError() {
     return (
       <Alert
         severity="error"
         action={<CloseButton onClickFunc={() => setEmailError(false)} />}
       >
-        <AlertTitle>Error</AlertTitle>
-        Error occurred while submitting form. Please try again.<br/>If this continues to happen, please reach out to me via LinkedIn.
+        <AlertTitle>
+          <Typography variant="h6" color="inherit">
+            Error
+          </Typography>
+        </AlertTitle>
+        <Typography variant="body1" color="inherit">
+          Error occurred while submitting form. Please try again.<br/>If this continues to happen, please reach out to me via&nbsp; 
+          <MuiLink
+            variant="inherit"
+            color="error"
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/lucas-premuda-151b1a65"
+          >
+            LinkedIn
+          </MuiLink>
+          .
+        </Typography>
       </Alert>
     )
   }
@@ -193,13 +219,12 @@ export default function ContactForm() {
             <SendButton />
           </Grid>
         </Grid>
-        {/* react-mail-icon */}
       </form>
       <Box
         display="flex"
         flexDirection="column"
         alignItems="center"
-        justifyContent="flex-start"
+        justifyContent="center"
         minHeight={150}
         py={2}
         boxSizing="border-box"
@@ -216,12 +241,30 @@ export default function ContactForm() {
         </Collapse>
         <Collapse
           in={emailError}
-          // in={false}
           collapsedHeight={0}
           {...(emailError ? { timeout: collapseTimeout } : {})}
         >
           <Box>
             <AlertError />
+          </Box>
+        </Collapse>
+        <Collapse
+          in={loading}
+          collapsedHeight={0}
+          {...(loading ? { timeout: 200 } : {})}
+        >
+          <Box
+            m="auto"
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            color="secondary.dark"
+          >
+            <CircularProgress color="inherit" />
+            <Typography variant="h6" color="inherit" style={{ paddingTop: '12px'}}>
+              Sending email...
+            </Typography>
           </Box>
         </Collapse>
       </Box>

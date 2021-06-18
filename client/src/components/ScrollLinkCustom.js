@@ -12,15 +12,7 @@ const useStyles = makeStyles({
 })
 
 export default function ScrollLinkCustom({ to , text, showActive, activeClass, handleClose, closeDrawerFunc, className }) {
-
   const classes = useStyles()
-
-  function handleClick() {
-    if (handleClose) {
-      console.log('run')
-      handleClose()
-    }
-  }
 
   return (
     <ScrollLink

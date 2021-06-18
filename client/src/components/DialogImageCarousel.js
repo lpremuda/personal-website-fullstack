@@ -44,8 +44,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const elevation = 3
-
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Zoom ref={ref} {...props} />;
 });
@@ -86,10 +84,6 @@ export default function DialogImageCarousel({ open, handleClose, config }) {
               fontSize="large"
             />
         </IconButton>
-        {/* <Box> */}
-          {/* <Carousel /> */}
-          {/* <img src="images/YourLibrary/YourLibrary-Index.jpg" alt="image" /> */}
-        {/* </Box> */}
         <Carousel
           autoPlay={false}
           navButtonsAlwaysVisible={true}
