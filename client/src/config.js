@@ -1,5 +1,5 @@
 const navBarHeight = 64
-const navBarCollapseHeight = 64
+const navBarCollapseHeight = 56
 const navBarOffset = -navBarHeight - navBarCollapseHeight
 
 export const config = {

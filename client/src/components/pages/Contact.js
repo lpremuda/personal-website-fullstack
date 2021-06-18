@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import ContactForm from '../ContactForm'
 
 import { makeStyles } from '@material-ui/core/styles'
+import Collapse from '@material-ui/core/Collapse'
 
 const useStyles = makeStyles((theme) => ({
   contactFormContainer: {
@@ -20,11 +21,33 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contact({ disableShowNavProjects }) {
   const classes = useStyles()
-  useEffect(disableShowNavProjects, [])
+
+  useEffect(() => {
+    disableShowNavProjects()
+    console.log('Contact useEffect() run')
+  }, [])
 
   return (
     <div className={classes.contactFormContainer}>
-      <ContactForm />  
+      <ContactForm /> 
+      {/* <Collapse
+        in={open}
+        collapsedHeight={0}
+        {...(open ? { timeout: 2000 } : {})}
+      >
+        <div style={{ height: '200px', width: '400px', backgroundColor: 'green'}}>
+
+        </div>
+      </Collapse>
+      <Collapse
+        in={open}
+        collapsedHeight={0}
+        {...(open ? { timeout: 2000 } : {})}
+      >
+        <div style={{ height: '200px', width: '400px', backgroundColor: 'blue'}}>
+
+        </div>
+      </Collapse> */}
     </div>
   )
 }
