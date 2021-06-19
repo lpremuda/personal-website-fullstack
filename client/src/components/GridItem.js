@@ -3,28 +3,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
-export default function GridItem({ children, position, imageFirst, xs, sm, md, bgColor, minHeight, height, ...otherVars }) {
-
-  const isProject = children.type['name'].search('Project') !== -1
-  console.log(isProject)
-  console.log(children.type['name'])
-  console.log(children.type['name'].search('Project'))
-  // console.log(children.type['displayName'])
-  // console.log(children.type['displayName'].search('Project'))
-
-  // For mobile: if child is a project, gets 0 (i.e. goes first)
-  // Image gets 1 (goes second)
-  const orderMobile = isProject ? 0 : 1
-
-  // For large screens: if child is a project 
-  let orderLarge
-  // If its a project
-  if (isProject) {
-    orderLarge = imageFirst ? 1 : 0
-  // If its a image
-  } else {
-    orderLarge = imageFirst ? 0 : 1
-  }
+export default function GridItem({ children, position, xs, sm, md, bgColor, minHeight, height, orderLarge, orderMobile, ...otherVars }) {
 
   const useStyles = makeStyles((theme) => ({
     gridClass: {

@@ -29,11 +29,12 @@ export default function ProjectRow({ id, imageFirst, config }) {
   const ProjectGridItem = () => {
     return (
       <GridItem
-        imageFirst={imageFirst}
         xs={12}
         sm={12}
         md={projectGridSize}
         minHeight={gridItemProjectMinHeight}
+        orderLarge={imageFirst ? 1 : 0}
+        orderMobile={0}
       >
         <ProjectMain config={config} />
       </GridItem>
@@ -43,11 +44,12 @@ export default function ProjectRow({ id, imageFirst, config }) {
   const ImageGridItem = () => {
     return (
       <GridItem
-        imageFirst={imageFirst}
         xs={12}
         sm={12}
         md={12-projectGridSize}
         minHeight={gridItemProjectMinHeight}
+        orderLarge={imageFirst ? 0 : 1}
+        orderMobile={1}
       >
         <ImageItem config={config} />
       </GridItem>
