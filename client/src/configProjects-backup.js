@@ -1,6 +1,5 @@
-export const configProjects = [
-  // React Sign-In
-  {
+export const configProjects = {
+  reactSignIn: {
     hero: {
       title: "React Sign-In App with Firebase",
       description: "React-based sign-in app with React Bootstrap on front end and Firebase Authentication API on back end",
@@ -52,8 +51,7 @@ export const configProjects = [
     }
   },
 
-  // MEN Library
-  {
+  me_nLibrary: {
     hero: {
       title: "Full-Stack MEN Library App",
       description: "MongoDB, Express, and Node working together to build full-stack RESTful following the MVC design pattern",
@@ -107,8 +105,7 @@ export const configProjects = [
     }
   },
 
-  // Personal Website
-  {
+  personalWebsite: {
     hero: {
       title: "LUCAS PREMUDA Portfolio Website",
       description: "Full-stack React-based, responsive portfolio website with Material UI front-end and Node/Express back-end",
@@ -162,4 +159,4 @@ export const configProjects = [
       demo: "https://react-firebase-auth-app.herokuapp.com/login"
     }
   },
-] 
+} 

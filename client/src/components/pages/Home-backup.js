@@ -145,13 +145,10 @@ export default function Home() {
         display="flex"
         flexDirection="column"
       >
-        {configProjects.map((configProject, iCP) => {
-          // If index, iCP, is odd, then image will go first
-          const imageFirst = (iCP % 2 == 1)
-          return (
-            <ProjectRow id={`project${iCP+1}`} imageFirst={imageFirst} config={configProject} />
-          )
-        })}
+        <ProjectRow id="project1" imageFirst={false} config={configProjects.reactSignIn} />
+        <ProjectRow id="project2" imageFirst={true} config={configProjects.me_nLibrary} />
+        <ProjectRow id="project3" imageFirst={false} config={configProjects.personalWebsite} />
+        <ProjectRow id="project4" imageFirst={true} config={configProjects.reactSignIn} />
         <ResumeMain />
       </Box>
     </>
