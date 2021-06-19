@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { config } from '../config'
+import { configProjects } from '../configProjects'
 
 import ScrollLinkCustom from './ScrollLinkCustom'
 import WebsiteIcon from './WebsiteIcon'
@@ -65,8 +66,6 @@ export default function Footer() {
   const classes = useStyles()
   const location = useLocation()
 
-  const projectNumbers = [1,2,3,4]
-
   return (
     <footer>
       <Box className={classes.footerBox}>
@@ -97,22 +96,22 @@ export default function Footer() {
             </Grid>
             <Grid item xs={3} className={classes.footerGridItem}>
               {/* PROJECT LINKS */}
-              {projectNumbers.map((num) => (
+              {configProjects.map((configProject, iCP) => (
                 <Box mb={mbFooterLink}>
                   {location.pathname === '/'
                   ?
                     <ScrollLinkCustom
-                      to={`project${num}`}
-                      text={`Project ${num}`}
+                      to={`project${iCP+1}`}
+                      text={`Project ${iCP+1}`}
                       showActive={false}
                       className={classes.footerLink} 
                     />
                   :
                     <Link
-                      to={`/#project${num}`}
+                      to={`/#project${iCP+1}`}
                       className={classes.footerLink}
                     >
-                      {`Project ${num}`}
+                      {`Project ${iCP+1}`}
                     </Link>
                   }
                 </Box>

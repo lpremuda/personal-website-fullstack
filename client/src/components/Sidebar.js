@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { configProjects } from '../configProjects'
+
 import ScrollLinkCustom from './ScrollLinkCustom'
 
 import { Link, useLocation } from 'react-router-dom'
@@ -54,8 +56,6 @@ export default function Sidebar({ toggleSidebar, sidebarOpen }) {
   const classes = useStyles()
   const location = useLocation()
 
-  const projectNumbers = [1,2,3,4]
-
   const list = () => (
     <div
       className={classes.list}
@@ -75,14 +75,14 @@ export default function Sidebar({ toggleSidebar, sidebarOpen }) {
       </List>
       <Divider className={classes.divider}/>
       <List>
-        {projectNumbers.map((num) => (
-          <ListItem button key={`project${num}`} className={classes.sideBarLink}>
+        {configProjects.map((configProject,iCP) => (
+          <ListItem button key={`project${iCP+1}`} className={classes.sideBarLink}>
             {location.pathname === "/"
             ?
-              <ScrollLinkCustom to={`project${num}`} text={`Project ${num}`} closeDrawerFunc={toggleSidebar(false)} />
+              <ScrollLinkCustom to={`project${iCP+1}`} text={`Project ${iCP+1}`} closeDrawerFunc={toggleSidebar(false)} />
             :
-              <Link to={`/#project${num}`} className={classes.link}>
-                {`Project ${num}`}
+              <Link to={`/#project${iCP+1}`} className={classes.link}>
+                {`Project ${iCP+1}`}
               </Link>
             }
           </ListItem>

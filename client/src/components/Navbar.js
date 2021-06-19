@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
 import { config } from '../config'
+import { configProjects } from '../configProjects'
+
 import HomeButton from './HomeButton'
 import ScrollLinkCustom from './ScrollLinkCustom'
 
@@ -240,58 +242,25 @@ export default function Navbar({ toggleSidebar }) {
       <Collapse in={location.pathname === "/"} className={classes.collapseContainer}>
         <Box onMouseEnter={onMouseEnterFunc} onMouseLeave={onMouseLeaveFunc} className={classes.projectsDropDownWrapper}>
           <Box className={classes.projectsDropDown}>
-            <Grow
-            in={location.pathname === "/"}
-            {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 500 } : {})}
-            >
-              <div>
-                <ScrollLinkCustom
-                  to="project1"
-                  text="Project 1"
-                  showActive={true}
-                  className={`${classes.navLinkBase} ${classes.navLinkSecondary}`}
-                />
-              </div>
-            </Grow>
-            <Grow
-            in={location.pathname === "/"}
-            {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 1000 } : {})}
-            >
-              <div>
-                <ScrollLinkCustom
-                  to="project2"
-                  text="Project 2"
-                  showActive={true}
-                  className={`${classes.navLinkBase} ${classes.navLinkSecondary}`}
-                />
-              </div>          
-            </Grow>
-            <Grow
-            in={location.pathname === "/"}
-            {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 1500 } : {})}
-            >
-              <div>
-                <ScrollLinkCustom
-                  to="project3"
-                  text="Project 3"
-                  showActive={true}
-                  className={`${classes.navLinkBase} ${classes.navLinkSecondary}`}
-                />
-              </div>          
-            </Grow>
-            <Grow
-            in={location.pathname === "/"}
-            {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 2000 } : {})}
-            >
-              <div>
-                <ScrollLinkCustom
-                  to="project4"
-                  text="Project 4"
-                  showActive={true}
-                  className={`${classes.navLinkBase} ${classes.navLinkSecondary}`}
-                />
-              </div>
-            </Grow>
+            {configProjects.map((configProject,iCP) => {
+              const timeout = 500 * iCP + 500
+
+              return (
+                <Grow
+                  in={location.pathname === "/"}
+                  {...((onProjectsMenu || onProjectsDropDown) ? { timeout: timeout } : {})}
+                >
+                  <div>
+                    <ScrollLinkCustom
+                      to={`project${iCP+1}`}
+                      text={`Project ${iCP+1}`}
+                      showActive={true}
+                      className={`${classes.navLinkBase} ${classes.navLinkSecondary}`}
+                    />
+                  </div>
+                </Grow> 
+              )
+            })}
           </Box>
         </Box>
         </Collapse>
