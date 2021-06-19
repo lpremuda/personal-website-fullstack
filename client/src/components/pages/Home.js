@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home({ enableShowNavProjects }) {
+export default function Home() {
   const classes = useStyles()
   const theme = useTheme()
 
@@ -57,7 +57,6 @@ export default function Home({ enableShowNavProjects }) {
   const [enCollapse, setEnCollapse] = useState(false)
 
   useEffect(() => {
-    enableShowNavProjects()
     setEnCollapse(true)
   }, [])
 

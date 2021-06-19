@@ -26,23 +26,13 @@ const useStyles = makeStyles({
 function App() {
   const classes = useStyles()
 
-  const [showNavProjects, setShowNavProjects] = useState(true)
-  const [dwrOpen, setDwrOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const disableShowNavProjects = () => {
-    setShowNavProjects(false)
-  }
-
-  const enableShowNavProjects = () => {
-    setShowNavProjects(true)
-  }
-
-  const toggleDrawer = (open) => (event) => {
+  const toggleSidebar = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
-    setDwrOpen(open);
+    setSidebarOpen(open);
   };
 
   return (
@@ -50,20 +40,20 @@ function App() {
       <Router>
         <ScrollToTop />
         <div>
-          <Navbar toggleDrawer={toggleDrawer} showNavProjects={showNavProjects} />
-          <Sidebar toggleDrawer={toggleDrawer} dwrOpen={dwrOpen} />
+          <Navbar toggleSidebar={toggleSidebar} />
+          <Sidebar toggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
         </div>
 
         <div className={classes.pageContent}>
           <Switch>
             <Route path="/" exact>
-              <Home enableShowNavProjects={enableShowNavProjects} />
+              <Home />
             </Route>
             <Route path="/contact" exact>
-              <Contact disableShowNavProjects={disableShowNavProjects} />
+              <Contact />
             </Route>
             <Route path="/about" exact>
-              <About disableShowNavProjects={disableShowNavProjects} />
+              <About />
             </Route>
           </Switch>
         </div>

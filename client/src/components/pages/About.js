@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
@@ -63,11 +63,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function About({ disableShowNavProjects }) {
+export default function About() {
   const classes = useStyles()
   const theme = useTheme()
-  
-  useEffect(disableShowNavProjects, [])
 
   return (
     <Box mt={2} mx="auto" className={classes.projectsContainer}>

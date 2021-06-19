@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Sidebar({ toggleDrawer, dwrOpen }) {
+export default function Sidebar({ toggleSidebar, sidebarOpen }) {
   const classes = useStyles()
   const location = useLocation()
 
@@ -60,8 +60,8 @@ export default function Sidebar({ toggleDrawer, dwrOpen }) {
     <div
       className={classes.list}
       role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
+      onClick={toggleSidebar(false)}
+      onKeyDown={toggleSidebar(false)}
     >
       <List>
         <ListItem button key="icon" className={classes.iconContainer} >
@@ -79,7 +79,7 @@ export default function Sidebar({ toggleDrawer, dwrOpen }) {
           <ListItem button key={`project${num}`} className={classes.sideBarLink}>
             {location.pathname === "/"
             ?
-              <ScrollLinkCustom to={`project${num}`} text={`Project ${num}`} closeDrawerFunc={toggleDrawer(false)} />
+              <ScrollLinkCustom to={`project${num}`} text={`Project ${num}`} closeDrawerFunc={toggleSidebar(false)} />
             :
               <Link to={`/#project${num}`} className={classes.link}>
                 {`Project ${num}`}
@@ -93,7 +93,7 @@ export default function Sidebar({ toggleDrawer, dwrOpen }) {
         <ListItem button key="resume" className={classes.sideBarLink}>
           {location.pathname === "/"
           ?
-            <ScrollLinkCustom to="resume" text="Resume" closeDrawerFunc={toggleDrawer(false)} />
+            <ScrollLinkCustom to="resume" text="Resume" closeDrawerFunc={toggleSidebar(false)} />
           :
             <Link to="/#resume" className={classes.link}>
               Resume
@@ -113,7 +113,7 @@ export default function Sidebar({ toggleDrawer, dwrOpen }) {
   return (
     <div>
       <React.Fragment>
-        <Drawer anchor='left' open={dwrOpen} onClose={toggleDrawer(false)}>
+        <Drawer anchor='left' open={sidebarOpen} onClose={toggleSidebar(false)}>
           {list()}
         </Drawer>
       </React.Fragment>

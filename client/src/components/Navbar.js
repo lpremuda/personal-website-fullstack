@@ -145,10 +145,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Navbar({ showNavProjects, toggleDrawer }) {
+export default function Navbar({ toggleSidebar }) {
   const classes = useStyles()
 
-  const [onProjectsMenu, setOnProjectsMenu] = useState(true)
+  const onProjectsMenu = true
+
   const [onProjectsDropDown, setOnProjectsDropDown] = useState(false)
 
   let location = useLocation()
@@ -170,9 +171,8 @@ export default function Navbar({ showNavProjects, toggleDrawer }) {
         <div className={classes.toolbarContainer} >
           <Toolbar className={classes.toolbar}>
             <Grow
-              // in={location.pathname === "/"}
               in={true}
-              {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 250 } : {})}
+              {...((onProjectsMenu || onProjectsDropDown) ? { timeout: 400 } : {})}
             >
               <div className={`${classes.homeBtnContainer} ${classes.navLinkMain}`} >
                 {location.pathname === '/'
@@ -198,7 +198,7 @@ export default function Navbar({ showNavProjects, toggleDrawer }) {
               <IconButton
                 color="inherit"
                 edge="end"
-                onClick={toggleDrawer(true)}
+                onClick={toggleSidebar(true)}
                 className={classes.menuButton}
                 aria-label="menu">
                   <MenuIcon />

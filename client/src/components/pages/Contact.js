@@ -18,13 +18,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function Contact({ disableShowNavProjects }) {
+export default function Contact() {
   const classes = useStyles()
-
-  useEffect(() => {
-    disableShowNavProjects()
-    console.log('Contact useEffect() run')
-  }, [])
 
   return (
     <div className={classes.contactFormContainer}>
