@@ -97,7 +97,7 @@ export default function Footer() {
             <Grid item xs={3} className={classes.footerGridItem}>
               {/* PROJECT LINKS */}
               {configProjects.map((configProject, iCP) => (
-                <Box mb={mbFooterLink}>
+                <Box mb={mbFooterLink} key={iCP}>
                   {location.pathname === '/'
                   ?
                     <ScrollLinkCustom

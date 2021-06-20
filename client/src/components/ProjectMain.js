@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   boldFont: {
     fontWeight: 700,
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const marginY = 4
 
-export default function ProjectMain({ config }) {
+export default function ProjectMain({ configProject }) {
   const classes = useStyles()
 
   const [open, setOpen] = useState(false)
@@ -43,16 +43,17 @@ export default function ProjectMain({ config }) {
         fontWeight={700}
       >
         <Typography display="block" variant="h2" align="center" className={classes.boldFont}>
-          {config.hero.title}
+          {configProject.hero.title}
         </Typography>
       </Box>
       <Box
         my={marginY}
       >
         <Typography display="block" variant="h4" align="center">
-          {config.hero.description}
+          {configProject.hero.description}
         </Typography>
       </Box>
+      {!configProject.hero.disableBtn &&
       <Box
         display="flex"
         flexDirection="row"
@@ -68,9 +69,12 @@ export default function ProjectMain({ config }) {
         >
           More Detail
         </Button>
-        <ModalBody open={open} handleClose={handleClose} config={config} />
-        <DemoButton href={config.links.demo} />
+        <ModalBody open={open} handleClose={handleClose} config={configProject} />
+        <DemoButton
+          href={configProject.links.demo}
+        />
       </Box>
+      }
     </div>
   )
 }

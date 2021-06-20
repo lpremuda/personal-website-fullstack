@@ -20,18 +20,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function ImageItem({ config }) {
+export default function ImageItem({ configProject }) {
   const classes = useStyles()
-
-
 
   return (
     <div className={classes.imageContainer}>
         <img
-          // src={config.hero.image.src}
-          // alt={config.hero.image.alt}
-          src={config.dialog.imageFilesNoURL[0]}
-          alt="image"
+          src={configProject.dialog.imageFilesNoURL[0]}
+          alt={configProject.dialog.alts[0]}
         />
     </div>
   )

@@ -2,6 +2,8 @@ import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
+import MuiLink from '@material-ui/core/Link'
+
 
 const useStyles = makeStyles({
   buttonLink: {
@@ -12,8 +14,8 @@ const useStyles = makeStyles({
 export default function ButtonLink({ children, href, variant, color, size }) {
   const classes = useStyles()
 
-  return (
-    <a target="_blank" rel="noreferrer" href={href} className={classes.buttonLink} >
+  const BtnBody = () => {
+    return (
       <Button
         variant={variant}
         color={color}
@@ -21,6 +23,12 @@ export default function ButtonLink({ children, href, variant, color, size }) {
       >
         {children}
       </Button>
-    </a>
+    )
+  }
+
+  return (
+    <MuiLink target="_blank" rel="noreferrer" href={href} className={classes.buttonLink} >
+      <BtnBody />
+    </MuiLink>
   )
 } 

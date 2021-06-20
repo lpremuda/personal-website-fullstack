@@ -51,8 +51,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function DialogImageCarousel({ open, handleClose, config }) {
   const classes = useStyles()
   const theme = useTheme()
-  const imageFiles = config.dialog.imageFiles
   const imageFilesNoURL = config.dialog.imageFilesNoURL
+  const alts = config.dialog.alts
   const grayCancelBtn = config.dialog.grayCancelBtn
 
   return (
@@ -96,11 +96,6 @@ export default function DialogImageCarousel({ open, handleClose, config }) {
             }
           }}
         >
-          {/* {
-            imageFiles.map((imageFile,i) => (
-              <img key={i} src={imageFile} alt="image" />
-            ))
-          } */}
           {
             imageFilesNoURL.map((imageFile,i) => (
               
@@ -113,28 +108,13 @@ export default function DialogImageCarousel({ open, handleClose, config }) {
                 alignItems="center"
                 key={i}
               >
-                {/* <Box
-                  height="90vh"
-                  width="80vw"
-                  style={{ backgroundImage: imageFile}}
-                  className={classes.backgroundImageDiv}
-                  key={i}
-                /> */}
-                {/* <img key={i} src={imageFile} alt="image" /> */}
-                {/* <Box
-                  // height="90vh"
-                  // width="80vw"
-                  style={{ backgroundImage: imageFile}}
-                  className={classes.backgroundImageDiv}
-                  key={i}
-                /> */}
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    className={classes.imgContainer}
-                  >
-                    <img key={i} src={imageFile} alt="image" />
-                  </Box>
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  className={classes.imgContainer}
+                >
+                  <img key={i} src={imageFile} alt={alts[i]} />
+                </Box>
               </Box>
             ))
           }

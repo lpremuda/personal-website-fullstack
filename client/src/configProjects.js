@@ -8,7 +8,8 @@ export const configProjects = [
         src: "images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg",
         alt: "ReactSignIn-SignUp_Successful.jpg"
       },
-      backgroundColor: "#fff"
+      backgroundColor: "#fff",
+      disableBtn: false
     },
     dialog: {
       projectDescription: [
@@ -44,6 +45,15 @@ export const configProjects = [
         "images/ReactSignIn/ReactSignIn-PasswordReset.jpg",   
         "images/ReactSignIn/ReactSignIn-Login_Error.jpg",             
       ],
+      alts: [
+        "ReactSignIn-SignUp_Successful.jpg",
+        "ReactSignIn-Login.jpg",
+        "ReactSignIn-Dashboard.jpg",
+        "ReactSignIn-UpdateProfile_Error.jpg",
+        "ReactSignIn-UpdateProfile_Successful.jpg",
+        "ReactSignIn-PasswordReset.jpg",   
+        "ReactSignIn-Login_Error.jpg",             
+      ],
       grayCancelBtn: false,
     },
     links: {
@@ -61,7 +71,8 @@ export const configProjects = [
         src: "images/YourLibrary/YourLibrary-Index.jpg",
         alt: "YourLibrary-Index.jpg"
       },
-      backgroundColor: "blue"
+      backgroundColor: "blue",
+      disableBtn: false
     },
     dialog: {
       projectDescription: [
@@ -99,6 +110,13 @@ export const configProjects = [
         "images/YourLibrary/YourLibrary-Author_New.jpg",
         "images/YourLibrary/YourLibrary-Author_Show.jpg",        
       ],
+      alts: [
+        "YourLibrary-Index.jpg",
+        "YourLibrary-Book_New.jpg",
+        "YourLibrary-Book_Show.jpg",
+        "YourLibrary-Author_New.jpg",
+        "YourLibrary-Author_Show.jpg",        
+      ],
       grayCancelBtn: true,
     },
     links: {
@@ -113,10 +131,11 @@ export const configProjects = [
       title: "LUCAS PREMUDA Portfolio Website",
       description: "Full-stack React-based, responsive portfolio website with Material UI front-end and Node/Express back-end",
       image: {
-        src: "images/react-firebase-log-in.jpg", //FIX
-        alt: "react-firebase-log-in.jpg" //FIX
+        src: "images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg",
+        alt: "ReactSignIn-SignUp_Successful.jpg"
       },
-      backgroundColor: "#fff"
+      backgroundColor: "#fff",
+      disableBtn: false
     },
     dialog: {
       projectDescription: [
@@ -155,11 +174,65 @@ export const configProjects = [
         "images/ReactSignIn/ReactSignIn-PasswordReset.jpg",   
         "images/ReactSignIn/ReactSignIn-Login_Error.jpg",             
       ],
+      alts: [
+        "ReactSignIn-SignUp_Successful.jpg",
+        "ReactSignIn-Login.jpg",
+        "ReactSignIn-Dashboard.jpg",
+        "ReactSignIn-UpdateProfile_Error.jpg",
+        "ReactSignIn-UpdateProfile_Successful.jpg",
+        "ReactSignIn-PasswordReset.jpg",   
+        "ReactSignIn-Login_Error.jpg",             
+      ],
       grayCancelBtn: false,
     },
     links: {
       github: "https://github.com/lpremuda/react-firebase-auth-app",
       demo: "https://react-firebase-auth-app.herokuapp.com/login"
+    }
+  },
+
+  // More Projects to Come
+  {
+    hero: {
+      title: "More Projects to Come...",
+      description: "More projects will be coming soon. Stay tuned!",
+      image: {
+        src: "images/MoreToCome/under_construction.jpg",
+        alt: "under_construction.jpg"
+      },
+      backgroundColor: "#fff",
+      disableBtn: true
+    },
+    dialog: {
+      projectDescription: [
+        "React-based sign-in app. User is able to Sign Up, Log In, Recover Password, Change Username, Change Password, and Sign Out.",
+        "Heroku Node.js buildpack starts Express server and initiates create-react-app build command, which creates static files to serve.",
+        "Express serves static files and creates route for a contact form submission to initiate a Nodemailer email to be sent.",
+        "Nodemailer module using Sendinblue SMTP server to send website owner an email with users' name, email address, and message when the contact form is submitted.",
+        "Deployed to Heroku.",
+      ],
+      frontEnd: [
+        "React",
+        "Material UI",
+        "HTML5",
+        "CSS3",
+      ],
+      backEnd: [
+      ],
+      imageFiles: [
+        "url(images/MoreToCome/under_construction.jpg)",        
+      ],
+      imageFilesNoURL: [
+        "images/MoreToCome/under_construction.jpg",           
+      ],
+      alts: [
+        "under_construction.jpg",           
+      ],
+      grayCancelBtn: false,
+    },
+    links: {
+      github: "no-url",
+      demo: "no-url"
     }
   },
 ] 

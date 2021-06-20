@@ -18,6 +18,11 @@ import CancelIcon from '@material-ui/icons/Cancel'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
 const useStyles = makeStyles((theme) => ({
+  dialog: {
+    '& .MuiDialog-paperScrollPaper': {
+      backgroundColor: theme.palette.primary.light
+    }
+  },
   projectTitleContainer: {
     fontWeight: 700,
     display: 'flex',
@@ -131,7 +136,6 @@ export default function ModalBody({ open, handleClose, config }) {
         // borderRadius={3}
         boxSizing="border-box"
         p={1}
-        bgcolor={theme.palette.primary.light}
       >
         <IconButton
           color="inherit"

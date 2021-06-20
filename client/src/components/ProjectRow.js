@@ -4,19 +4,25 @@ import GridItem from './GridItem'
 import ImageItem from './ImageItem'
 import ProjectMain from './ProjectMain'
 
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 
-export default function ProjectRow({ id, imageFirst, config }) {
+export default function ProjectRow({ id, imageFirst, configProject }) {
 
   const theme = useTheme()
 
-  const gridItemProjectMinHeight = "70vh"
+  const minHeightMobile = "50vh"
+  const minHeightLarge = "70vh"
+  const maxHeightMobile = "70vh"
+  const maxHeightLarge = "100vh"
   const projGridRowSpacing = 10 // 10 is max
   const backgroundColor = imageFirst ? theme.palette.primary.light : "#fff"
   const projectGridSize = 6
+
+  const down_sm = useMediaQuery(theme => theme.breakpoints.down('sm'))
 
   const useStyles = makeStyles((theme) => ({
     container: {
@@ -32,11 +38,11 @@ export default function ProjectRow({ id, imageFirst, config }) {
         xs={12}
         sm={12}
         md={projectGridSize}
-        minHeight={gridItemProjectMinHeight}
+        minHeight={down_sm ? minHeightMobile : minHeightLarge}
         orderLarge={imageFirst ? 1 : 0}
         orderMobile={0}
       >
-        <ProjectMain config={config} />
+        <ProjectMain configProject={configProject} />
       </GridItem>
     )
   }
@@ -47,11 +53,12 @@ export default function ProjectRow({ id, imageFirst, config }) {
         xs={12}
         sm={12}
         md={12-projectGridSize}
-        minHeight={gridItemProjectMinHeight}
+        minHeight={down_sm ? minHeightMobile : minHeightLarge}
+        maxHeight={down_sm ? maxHeightMobile : maxHeightLarge}
         orderLarge={imageFirst ? 0 : 1}
         orderMobile={1}
       >
-        <ImageItem config={config} />
+        <ImageItem configProject={configProject} />
       </GridItem>
     )
   }

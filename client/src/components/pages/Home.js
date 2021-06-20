@@ -147,9 +147,9 @@ export default function Home() {
       >
         {configProjects.map((configProject, iCP) => {
           // If index, iCP, is odd, then image will go first
-          const imageFirst = (iCP % 2 == 1)
+          const imageFirst = (iCP % 2 === 1)
           return (
-            <ProjectRow id={`project${iCP+1}`} imageFirst={imageFirst} config={configProject} />
+            <ProjectRow id={`project${iCP+1}`} imageFirst={imageFirst} configProject={configProject} />
           )
         })}
         <ResumeMain />
