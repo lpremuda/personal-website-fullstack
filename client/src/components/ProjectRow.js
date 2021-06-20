@@ -71,7 +71,8 @@ export default function ProjectRow({ id, imageFirst, configProject }) {
     >
       <Container className={classes.container}>
         <Grid
-        container spacing={projGridRowSpacing}
+          container
+          spacing={projGridRowSpacing}
         >
           <ProjectGridItem />
           <ImageGridItem />

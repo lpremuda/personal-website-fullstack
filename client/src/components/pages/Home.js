@@ -149,7 +149,7 @@ export default function Home() {
           // If index, iCP, is odd, then image will go first
           const imageFirst = (iCP % 2 === 1)
           return (
-            <ProjectRow id={`project${iCP+1}`} imageFirst={imageFirst} configProject={configProject} />
+            <ProjectRow id={`project${iCP+1}`} imageFirst={imageFirst} configProject={configProject} key={iCP} />
           )
         })}
         <ResumeMain />

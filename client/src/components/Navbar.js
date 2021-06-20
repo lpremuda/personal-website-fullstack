@@ -249,6 +249,7 @@ export default function Navbar({ toggleSidebar }) {
                 <Grow
                   in={location.pathname === "/"}
                   {...((onProjectsMenu || onProjectsDropDown) ? { timeout: timeout } : {})}
+                  key={iCP}
                 >
                   <div>
                     <ScrollLinkCustom

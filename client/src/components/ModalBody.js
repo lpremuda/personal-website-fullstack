@@ -4,7 +4,7 @@ import { config } from '../config'
 import DemoButton from './DemoButton'
 import DialogImageCarousel from './DialogImageCarousel'
 
-import { makeStyles, darken, useTheme } from '@material-ui/core/styles'
+import { makeStyles, darken } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
@@ -105,7 +105,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function ModalBody({ open, handleClose, config }) {
   const classes = useStyles()
-  const theme = useTheme()
 
   const [openDIC, setOpenDIC] = useState(false)
 
@@ -120,17 +119,15 @@ export default function ModalBody({ open, handleClose, config }) {
   return (
     <Dialog
       open={open}
-      // fullWidth={true}
       onClose={handleClose}
       flexDirection="column"
-      maxWidth={theme.breakpoints.values['lg']}
+      maxWidth="xl"
       TransitionComponent={Transition}
       className={classes.dialog}
     >
       <Box
         height="90vh"
         maxWidth="90vw"
-        // maxWidth={theme.breakpoints.values['lg']}
         display="flex"
         flexDirection="column"
         // borderRadius={3}
@@ -169,8 +166,8 @@ export default function ModalBody({ open, handleClose, config }) {
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.projectDescriptionContainer}`}>
-                {config.dialog.projectDescription.map((line) => (
-                  <Typography variant="body1" className={classes.projectDescriptionTypography}>
+                {config.dialog.projectDescription.map((line,i) => (
+                  <Typography variant="body1" className={classes.projectDescriptionTypography} key={i}>
                     {line}  
                   </Typography>
                 ))}
@@ -204,8 +201,8 @@ export default function ModalBody({ open, handleClose, config }) {
                   flexWrap="wrap"
                   height="100px"
                 >
-                  {config.dialog.frontEnd.map((line) => (
-                    <Typography variant="body1">
+                  {config.dialog.frontEnd.map((line,i) => (
+                    <Typography variant="body1" key={i}>
                       {line}  
                     </Typography>
                   ))}
@@ -223,8 +220,8 @@ export default function ModalBody({ open, handleClose, config }) {
                   flexWrap="wrap"
                   height="100px"
                 >
-                  {config.dialog.backEnd.map((line) => (
-                    <Typography variant="body1">
+                  {config.dialog.backEnd.map((line,i) => (
+                    <Typography variant="body1" key={i}>
                       {line}  
                     </Typography>
                   ))}

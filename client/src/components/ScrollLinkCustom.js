@@ -16,7 +16,7 @@ export default function ScrollLinkCustom({ to , text, showActive, activeClass, h
 
   return (
     <ScrollLink
-      activeClass={showActive && classes.active}
+      activeClass={showActive ? classes.active : ""}
       to={to}
       spy={config.scrollLink.spy}
       smooth={config.scrollLink.smooth}
