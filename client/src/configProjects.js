@@ -9,7 +9,8 @@ export const configProjects = [
         alt: "ReactSignIn-SignUp_Successful.jpg"
       },
       backgroundColor: "#fff",
-      disableBtn: false
+      hideButtons: false,
+      hideDemoButton: false
     },
     dialog: {
       projectDescription: [
@@ -72,7 +73,8 @@ export const configProjects = [
         alt: "YourLibrary-Index.jpg"
       },
       backgroundColor: "blue",
-      disableBtn: false
+      hideButtons: false,
+      hideDemoButton: false
     },
     dialog: {
       projectDescription: [
@@ -131,11 +133,12 @@ export const configProjects = [
       title: "LUCAS PREMUDA Portfolio Website",
       description: "Full-stack React-based, responsive portfolio website with Material UI front-end and Node/Express back-end",
       image: {
-        src: "images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg",
-        alt: "ReactSignIn-SignUp_Successful.jpg"
+        src: "images/PersonalWebsite/PersonalWebsite-Hero-image.jpg",
+        alt: "PersonalWebsite-Hero-image.jpg"
       },
       backgroundColor: "#fff",
-      disableBtn: false
+      hideButtons: false,
+      hideDemoButton: true,
     },
     dialog: {
       projectDescription: [
@@ -157,31 +160,34 @@ export const configProjects = [
         "Nodemailer"
       ],
       imageFiles: [
-        "url(images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg)",
-        "url(images/ReactSignIn/ReactSignIn-Login.jpg)",
-        "url(images/ReactSignIn/ReactSignIn-Dashboard.jpg)",
-        "url(images/ReactSignIn/ReactSignIn-UpdateProfile_Error.jpg)",
-        "url(images/ReactSignIn/ReactSignIn-UpdateProfile_Successful.jpg)",
-        "url(images/ReactSignIn/ReactSignIn-PasswordReset.jpg)",   
-        "url(images/ReactSignIn/ReactSignIn-Login_Error.jpg)",         
+        "url(images/PersonalWebsite/PersonalWebsite-Hero-image.jpg)",
+        "url(images/PersonalWebsite/PersonalWebsite-Project1.jpg)",
+        "url(images/PersonalWebsite/PersonalWebsite-Resume.jpg)",     
+        "url(images/PersonalWebsite/PersonalWebsite-Hero-image.jpg)",
+        "url(images/PersonalWebsite/PersonalWebsite-Contact-page.jpg)",
+        "url(images/PersonalWebsite/PersonalWebsite-About-page.jpg)",    
+        "url(images/PersonalWebsite/PersonalWebsite-Hero-image-mobile.jpg)",
+        "url(images/PersonalWebsite/PersonalWebsite-Sidebar.jpg)",  
       ],
       imageFilesNoURL: [
-        "images/ReactSignIn/ReactSignIn-SignUp_Successful.jpg",
-        "images/ReactSignIn/ReactSignIn-Login.jpg",
-        "images/ReactSignIn/ReactSignIn-Dashboard.jpg",
-        "images/ReactSignIn/ReactSignIn-UpdateProfile_Error.jpg",
-        "images/ReactSignIn/ReactSignIn-UpdateProfile_Successful.jpg",
-        "images/ReactSignIn/ReactSignIn-PasswordReset.jpg",   
-        "images/ReactSignIn/ReactSignIn-Login_Error.jpg",             
+        "images/PersonalWebsite/PersonalWebsite-Hero-image.jpg",
+        "images/PersonalWebsite/PersonalWebsite-Project1.jpg",
+        "images/PersonalWebsite/PersonalWebsite-Resume.jpg",   
+        "images/PersonalWebsite/PersonalWebsite-Hero-image.jpg",
+        "images/PersonalWebsite/PersonalWebsite-Contact-page.jpg",
+        "images/PersonalWebsite/PersonalWebsite-About-page.jpg",   
+        "images/PersonalWebsite/PersonalWebsite-Hero-image-mobile.jpg",
+        "images/PersonalWebsite/PersonalWebsite-Sidebar.jpg",         
       ],
       alts: [
-        "ReactSignIn-SignUp_Successful.jpg",
-        "ReactSignIn-Login.jpg",
-        "ReactSignIn-Dashboard.jpg",
-        "ReactSignIn-UpdateProfile_Error.jpg",
-        "ReactSignIn-UpdateProfile_Successful.jpg",
-        "ReactSignIn-PasswordReset.jpg",   
-        "ReactSignIn-Login_Error.jpg",             
+        "PersonalWebsite-Hero-image.jpg",
+        "PersonalWebsite-Project1.jpg",
+        "PersonalWebsite-About-page.jpg", 
+        "PersonalWebsite-Resume.jpg",
+        "PersonalWebsite-Contact-page.jpg",
+        "PersonalWebsite-About-page.jpg",    
+        "PersonalWebsite-Hero-image-mobile.jpg",
+        "PersonalWebsite-Sidebar.jpg",           
       ],
       grayCancelBtn: false,
     },
@@ -201,7 +207,8 @@ export const configProjects = [
         alt: "under_construction.jpg"
       },
       backgroundColor: "#fff",
-      disableBtn: true
+      hideButtons: true,
+      hideDemoButton: true, // doesn't matter
     },
     dialog: {
       projectDescription: [

@@ -48,12 +48,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Zoom ref={ref} {...props} />;
 });
 
-export default function DialogImageCarousel({ open, handleClose, config }) {
+export default function DialogImageCarousel({ open, handleClose, configProject }) {
   const classes = useStyles()
   const theme = useTheme()
-  const imageFilesNoURL = config.dialog.imageFilesNoURL
-  const alts = config.dialog.alts
-  const grayCancelBtn = config.dialog.grayCancelBtn
+  const imageFilesNoURL = configProject.dialog.imageFilesNoURL
+  const alts = configProject.dialog.alts
+  const grayCancelBtn = configProject.dialog.grayCancelBtn
 
   return (
     <Dialog

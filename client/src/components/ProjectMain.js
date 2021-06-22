@@ -53,7 +53,7 @@ export default function ProjectMain({ configProject }) {
           {configProject.hero.description}
         </Typography>
       </Box>
-      {!configProject.hero.disableBtn &&
+      {!configProject.hero.hideButtons &&
       <Box
         display="flex"
         flexDirection="row"
@@ -69,10 +69,11 @@ export default function ProjectMain({ configProject }) {
         >
           More Detail
         </Button>
-        <ModalBody open={open} handleClose={handleClose} config={configProject} />
+        <ModalBody open={open} handleClose={handleClose} configProject={configProject} />
+        {!configProject.hero.hideDemoButton &&
         <DemoButton
           href={configProject.links.demo}
-        />
+        />}
       </Box>
       }
     </div>

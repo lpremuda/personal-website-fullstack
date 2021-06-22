@@ -103,7 +103,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Zoom ref={ref} {...props} />;
 });
 
-export default function ModalBody({ open, handleClose, config }) {
+export default function ModalBody({ open, handleClose, configProject }) {
   const classes = useStyles()
 
   const [openDIC, setOpenDIC] = useState(false)
@@ -142,7 +142,7 @@ export default function ModalBody({ open, handleClose, config }) {
           aria-label="menu">
             <CancelIcon fontSize="large" />
         </IconButton>
-        <DialogImageCarousel open={openDIC} handleClose={handleCloseDIC} config={config} />
+        <DialogImageCarousel open={openDIC} handleClose={handleCloseDIC} configProject={configProject} />
         
         {/* ROW 1 */}
         <Box
@@ -152,7 +152,7 @@ export default function ModalBody({ open, handleClose, config }) {
             <Grid item xs={12}>
               <Box className={classes.projectTitleContainer}>
                 <Typography display="block" variant="h2" align="center" className={classes.projectTitleContainer}>
-                  {config.hero.title}
+                  {configProject.hero.title}
                 </Typography>
               </Box>
             </Grid>
@@ -166,7 +166,7 @@ export default function ModalBody({ open, handleClose, config }) {
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.projectDescriptionContainer}`}>
-                {config.dialog.projectDescription.map((line,i) => (
+                {configProject.dialog.projectDescription.map((line,i) => (
                   <Typography variant="body1" className={classes.projectDescriptionTypography} key={i}>
                     {line}  
                   </Typography>
@@ -176,8 +176,8 @@ export default function ModalBody({ open, handleClose, config }) {
             <Grid item xs={12} md={6} className={classes.imageGridItem}>
               <Paper elevation={elevation} className={`${classes.unitContainer} ${classes.imageContainer}`}>
                 <img
-                  src={config.hero.image.src}
-                  alt={config.hero.image.alt}
+                  src={configProject.hero.image.src}
+                  alt={configProject.hero.image.alt}
                   onClick={handleClickDIC}
                 />
               </Paper>
@@ -201,7 +201,7 @@ export default function ModalBody({ open, handleClose, config }) {
                   flexWrap="wrap"
                   height="100px"
                 >
-                  {config.dialog.frontEnd.map((line,i) => (
+                  {configProject.dialog.frontEnd.map((line,i) => (
                     <Typography variant="body1" key={i}>
                       {line}  
                     </Typography>
@@ -220,7 +220,7 @@ export default function ModalBody({ open, handleClose, config }) {
                   flexWrap="wrap"
                   height="100px"
                 >
-                  {config.dialog.backEnd.map((line,i) => (
+                  {configProject.dialog.backEnd.map((line,i) => (
                     <Typography variant="body1" key={i}>
                       {line}  
                     </Typography>
@@ -240,10 +240,11 @@ export default function ModalBody({ open, handleClose, config }) {
                   justifyContent="space-evenly"
                   alignItems="center"
                 >
-                  <a target="_blank" rel="noreferrer" href={config.links.github} className={classes.iconLink} >
+                  <a target="_blank" rel="noreferrer" href={configProject.links.github} className={classes.iconLink} >
                     <GitHubIcon fontSize="large" />
                   </a>
-                  <DemoButton href={config.links.demo} />
+                  {!configProject.hero.hideDemoButton &&
+                    <DemoButton href={configProject.links.demo} />}
                   <Button
                     variant="outlined"
                     color="primary"

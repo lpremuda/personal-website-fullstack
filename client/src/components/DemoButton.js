@@ -2,7 +2,7 @@ import React from 'react'
 
 import ButtonLink from './ButtonLink'
 
-export default function DemoButton({ href, disableBtn }) {
+export default function DemoButton({ href }) {
 
   return (
     <ButtonLink
@@ -10,7 +10,6 @@ export default function DemoButton({ href, disableBtn }) {
       variant="contained"
       color="secondary"
       size="large"
-      disableBtn={disableBtn}
     >
       View Demo
     </ButtonLink>
