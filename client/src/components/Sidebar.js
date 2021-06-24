@@ -69,7 +69,7 @@ export default function Sidebar({ toggleSidebar, sidebarOpen, changeHashStr }) {
       <List>
         <ListItem button key="icon" className={classes.iconContainer} >
             <ListItemIcon className={classes.icon}>
-              <CancelIcon fontSize="large" />
+              <CancelIcon fontSize="large" className={classes.w100} />
             </ListItemIcon>
         </ListItem>
         <ListItem button key="home" className={classes.sideBarLink} >
