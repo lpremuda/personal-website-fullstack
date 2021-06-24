@@ -4,8 +4,9 @@ const express = require('express');
 const path = require('path');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
-const thisRouter = require('./thisRouter')
+const routerMain = require('./routerMain')
 const bodyParser = require('body-parser')
+require('dotenv').config()
 
 const isDev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 5000;
@@ -49,10 +50,9 @@ if (!isDev && cluster.isMaster) {
     next();
   });
 
-  console.log(thisRouter)
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: false }))
-  app.use('/send-email', thisRouter)
+  app.use('/send-email', routerMain)
 
   // All remaining requests return the React app, so it can handle routing.
   // This seemed like it was necessary before, but after commenting it out and testing it on Heroku, everything works fine
