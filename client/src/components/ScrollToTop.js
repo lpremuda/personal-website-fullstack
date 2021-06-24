@@ -44,11 +44,11 @@ export default function ScrollToTop({ hashStr }) {
           // setTimeout(() => {
           //   console.log(`500ms - pageYOffset = ${window.pageYOffset}`)
           // },3000)
-          window.scrollTo(window.scrollTo({top:yDestination, left:0, behavior: "smooth"}))
+          window.scrollTo({top:yDestination, left:0, behavior: "smooth"})
           // elem.scrollTop -= 400
           // elem.scrollIntoView({behavior: 'smooth'})
         }
-      }, 50)
+      }, 10)
     } else {
     console.log('ScrollToTop useEffect() - else block')
     window.scrollTo({top:0, left:0, behavior: "smooth"})
