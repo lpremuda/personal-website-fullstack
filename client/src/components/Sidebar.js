@@ -49,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
     backgroundColor: theme.palette.primary.contrastText,
+  },
+  w100: {
+    width: '100%'
   }
 }));
 
@@ -70,7 +73,7 @@ export default function Sidebar({ toggleSidebar, sidebarOpen, changeHashStr }) {
             </ListItemIcon>
         </ListItem>
         <ListItem button key="home" className={classes.sideBarLink} >
-          <Link to="/" color="inherit" className={classes.link}>Home</Link>
+          <Link to="/" color="inherit" className={`${classes.link} ${classes.w100}`}>Home</Link>
         </ListItem>
       </List>
       <Divider className={classes.divider}/>
@@ -79,11 +82,11 @@ export default function Sidebar({ toggleSidebar, sidebarOpen, changeHashStr }) {
           <ListItem button key={`project${iCP+1}`} className={classes.sideBarLink}>
             {location.pathname === "/"
             ?
-              <ScrollLinkCustom to={`project${iCP+1}`} text={`Project ${iCP+1}`} closeDrawerFunc={toggleSidebar(false)} />
+              <ScrollLinkCustom to={`project${iCP+1}`} text={`Project ${iCP+1}`} closeDrawerFunc={toggleSidebar(false)} className={classes.w100} />
             :
               <Link
                 to="/"
-                className={classes.link}
+                className={`${classes.link} ${classes.w100}`}
                 onClick={() => changeHashStr(`project${iCP+1}`)}
               >
                 {`Project ${iCP+1}`}
@@ -97,11 +100,11 @@ export default function Sidebar({ toggleSidebar, sidebarOpen, changeHashStr }) {
         <ListItem button key="resume" className={classes.sideBarLink}>
           {location.pathname === "/"
           ?
-            <ScrollLinkCustom to="resume" text="Resume" closeDrawerFunc={toggleSidebar(false)} />
+            <ScrollLinkCustom to="resume" text="Resume" closeDrawerFunc={toggleSidebar(false)} className={classes.w100} />
           :
             <Link
               to="/"
-              className={classes.link}
+              className={`${classes.link} ${classes.w100}`}
               onClick={() => changeHashStr("resume")}
             >
               Resume
@@ -109,10 +112,10 @@ export default function Sidebar({ toggleSidebar, sidebarOpen, changeHashStr }) {
           }
         </ListItem>
         <ListItem button key="contact" className={classes.sideBarLink}>
-          <Link className={classes.link} to="/contact" color="inherit">Contact</Link>
+          <Link className={`${classes.link} ${classes.w100}`} to="/contact" color="inherit">Contact</Link>
         </ListItem>
         <ListItem button key="about" className={classes.sideBarLink}>
-          <Link className={classes.link} to="/about" color="inherit">About</Link>
+          <Link className={`${classes.link} ${classes.w100}`} to="/about" color="inherit">About</Link>
         </ListItem>
       </List>
     </div>
