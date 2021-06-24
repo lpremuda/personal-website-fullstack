@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import About from './components/pages/About'
 import Contact from './components/pages/Contact'
@@ -26,7 +26,13 @@ const useStyles = makeStyles({
 function App() {
   const classes = useStyles()
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [hashStr, setHashStr] = useState('')
+
+  const changeHashStr = id => setHashStr(id)
+  const resetHashStr = () => setHashStr('')
+
+  useEffect(() => resetHashStr())
 
   const toggleSidebar = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -38,10 +44,17 @@ function App() {
   return (
     <div className={classes.app} >
       <Router>
-        <ScrollToTop />
+        <ScrollToTop hashStr={hashStr} />
         <div>
-          <Navbar toggleSidebar={toggleSidebar} />
-          <Sidebar toggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
+          <Navbar
+            toggleSidebar={toggleSidebar}
+            changeHashStr={changeHashStr}
+          />
+          <Sidebar
+            toggleSidebar={toggleSidebar}
+            sidebarOpen={sidebarOpen}
+            changeHashStr={changeHashStr}
+          />
         </div>
 
         <div className={classes.pageContent}>
@@ -59,7 +72,7 @@ function App() {
         </div>
 
         <div>
-          <Footer />
+          <Footer changeHashStr={changeHashStr} />
         </div>
         
       </Router>

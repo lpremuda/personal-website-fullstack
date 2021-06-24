@@ -67,6 +67,10 @@ const useStyles = makeStyles((theme) => ({
   resumeSvgContainer: {
     height: '450px',
     width: '450px',
+    [theme.breakpoints.down('xs')]: {
+      height: '375px',
+      width: '375px',
+    },
     padding: theme.spacing(2), 
     margin: `${theme.spacing(2)}px 0`,
     boxSizing: 'border-box',

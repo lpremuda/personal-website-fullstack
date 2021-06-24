@@ -147,7 +147,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Navbar({ toggleSidebar }) {
+export default function Navbar({ toggleSidebar, changeHashStr }) {
   const classes = useStyles()
 
   const onProjectsMenu = true
@@ -217,8 +217,9 @@ export default function Navbar({ toggleSidebar }) {
                       />
                     :
                       <Link
-                        to="/#resume"
+                        to="/"
                         className={`${classes.navLinkBase} ${classes.navLinkMain}`}
+                        onClick={() => changeHashStr('resume')}
                       >
                         Resume
                       </Link>

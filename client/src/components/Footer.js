@@ -41,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
   },
   footerLink: {
     fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.fontSize,
+    // fontSize: theme.typography.fontSize,
+    fontSize: '1rem',
     textTransform: 'uppercase',
     textDecoration: 'none',
     color: 'inherit',
@@ -59,12 +60,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const mbFooterLink = 1.25
-const mbFooterIcon = 1
-
-export default function Footer() {
+export default function Footer({ changeHashStr }) {
   const classes = useStyles()
   const location = useLocation()
+
+  const mbFooterLink = 1.5
+  const mbFooterIcon = 1.5
+  const iconFontSize = '2.75rem'
 
   return (
     <footer>
@@ -83,12 +85,13 @@ export default function Footer() {
                       duration={config.scrollLink.duration}
                       className={classes.iconLink}
                 >
-                      <WebsiteIcon />
+                      <WebsiteIcon fontSize={iconFontSize} />
                 </ScrollLink>
               :
                 <Link
-                  to="/#homeTop"
+                  to="/"
                   className={classes.iconLink}
+                  onClick={() => changeHashStr('homeTop')}
                 >
                   <WebsiteIcon />
                 </Link>
@@ -108,8 +111,10 @@ export default function Footer() {
                     />
                   :
                     <Link
-                      to={`/#project${iCP+1}`}
+                      // to={`/#project${iCP+1}`}
+                      to="/"
                       className={classes.footerLink}
+                      onClick={() => changeHashStr(`project${iCP+1}`)}
                     >
                       {`Project ${iCP+1}`}
                     </Link>
@@ -129,8 +134,10 @@ export default function Footer() {
                     />
                   :
                     <Link
-                      to="/#resume"
+                      // to="/#resume"
+                      to="/"
                       className={classes.footerLink}
+                      onClick={() => changeHashStr('resume')}
                     >
                       Resume
                     </Link>
@@ -150,12 +157,12 @@ export default function Footer() {
             <Grid item xs={3} className={classes.footerGridItem}>
               <Box mb={mbFooterIcon}>
                 <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/lucas-premuda-151b1a65" className={classes.iconLink}>
-                  <LinkedInIcon fontSize="large"/>
+                  <LinkedInIcon style={{ fontSize: iconFontSize}} />
                 </a>
               </Box>
               <Box mb={mbFooterIcon}>
                 <a target="_blank" rel="noreferrer" href="https://github.com/lpremuda" className={classes.iconLink} >
-                  <GitHubIcon fontSize="large" />
+                  <GitHubIcon style={{ fontSize: iconFontSize}} />
                 </a>
               </Box>
             </Grid>

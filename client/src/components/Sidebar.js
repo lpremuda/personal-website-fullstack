@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Sidebar({ toggleSidebar, sidebarOpen }) {
+export default function Sidebar({ toggleSidebar, sidebarOpen, changeHashStr }) {
   const classes = useStyles()
   const location = useLocation()
 
@@ -81,7 +81,11 @@ export default function Sidebar({ toggleSidebar, sidebarOpen }) {
             ?
               <ScrollLinkCustom to={`project${iCP+1}`} text={`Project ${iCP+1}`} closeDrawerFunc={toggleSidebar(false)} />
             :
-              <Link to={`/#project${iCP+1}`} className={classes.link}>
+              <Link
+                to="/"
+                className={classes.link}
+                onClick={() => changeHashStr(`project${iCP+1}`)}
+              >
                 {`Project ${iCP+1}`}
               </Link>
             }
@@ -95,7 +99,11 @@ export default function Sidebar({ toggleSidebar, sidebarOpen }) {
           ?
             <ScrollLinkCustom to="resume" text="Resume" closeDrawerFunc={toggleSidebar(false)} />
           :
-            <Link to="/#resume" className={classes.link}>
+            <Link
+              to="/"
+              className={classes.link}
+              onClick={() => changeHashStr("resume")}
+            >
               Resume
             </Link>
           }

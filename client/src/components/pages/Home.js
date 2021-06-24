@@ -34,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
   },
   heroBoxContainer: {
     position: 'absolute',
-    top: '128px',
-    height: 'calc(100% - 128px)',
+    top: '120px',
+    height: `calc(100% + ${config.Navbar.navBarOffset}px)`,
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -59,6 +59,20 @@ export default function Home() {
   useEffect(() => {
     setEnCollapse(true)
   }, [])
+
+  // const thisFunction = () => {
+  //   // history.location.pathname='/lucas'
+  //   location.hash = ''
+  // }
+
+  // useEffect(() => {
+  //   // If hash present, such as "/#resume", it removes it by setting path to "/"
+  //   if (history.location.hash !== '') {
+  //     // history.replace('/')
+  //     // setTimeout(() => history.replace('/'), 2000)
+  //     setTimeout(() => thisFunction(), 1000)
+  //   }
+  // }, [history])
 
   return (
     <>
