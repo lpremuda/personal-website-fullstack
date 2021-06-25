@@ -95,8 +95,6 @@ export const configProjects = [
         "Express.js",
         "MongoDB",
         "Mongoose.js",
-        "Another",
-        "Framework",
       ],
       imageFiles: [
         "url(images/YourLibrary/YourLibrary-Index.jpg)",
