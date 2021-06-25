@@ -192,8 +192,8 @@ export const configProjects = [
       grayCancelBtn: false,
     },
     links: {
-      github: "https://github.com/lpremuda/react-firebase-auth-app",
-      demo: "https://react-firebase-auth-app.herokuapp.com/login"
+      github: "https://github.com/lpremuda/personal-website-fullstack",
+      demo: "no-demo"
     }
   },
 
