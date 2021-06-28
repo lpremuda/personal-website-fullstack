@@ -48,7 +48,7 @@ export default function ScrollToTop({ hashStr }) {
           // elem.scrollTop -= 400
           // elem.scrollIntoView({behavior: 'smooth'})
         }
-      }, 50)
+      }, 100)
     } else {
     console.log('ScrollToTop useEffect() - else block')
     window.scrollTo({top:0, left:0, behavior: "smooth"})
