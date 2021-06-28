@@ -55,7 +55,7 @@ if (!isDev && cluster.isMaster) {
   app.use('/send-email', routerMain)
 
   app.get('/*', (req,res) => {
-    res.sendFile(path.resolve(__dirname, '../client/public/index.html'), function(err) {
+    res.sendFile(path.resolve(__dirname, '../client/build/index.html'), function(err) {
       res.status(500).send(err)
     })
   })
