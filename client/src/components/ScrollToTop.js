@@ -11,7 +11,7 @@ export default function ScrollToTop({ hashStr }) {
     console.log(`hashStr = ${hashStr}`)
     // if (location.hash) {
     if (hashStr !== '') {
-      // setTimeout(() => {
+      setTimeout(() => {
         console.log('%cScrollToTop useEffect() - if block', 'color: red, fontWeight: 500')
         // let elem = document.getElementById(location.hash.slice(1))
         let elem = document.getElementById(hashStr)
@@ -48,7 +48,7 @@ export default function ScrollToTop({ hashStr }) {
           // elem.scrollTop -= 400
           // elem.scrollIntoView({behavior: 'smooth'})
         }
-      // }, 500)
+      }, 50)
     } else {
     console.log('ScrollToTop useEffect() - else block')
     window.scrollTo({top:0, left:0, behavior: "smooth"})
