@@ -85,11 +85,12 @@ export default function Home() {
               display="flex"
               alignItems="center"
             >
-              <Collapse
+              {/* <Collapse
                 in={enCollapse}
                 {...(enCollapse ? { timeout: 1000 } : {})}
                 collapsedHeight={0}
-              >
+              > */}
+              <Box>
                 <Box
                   display="flex"
                   flexDirection="column"
@@ -114,7 +115,8 @@ export default function Home() {
                     </Typography>
                   </Box>
                 </Box>
-              </Collapse>
+              {/* </Collapse> */}
+              </Box>
             </Box>
           
 
@@ -126,11 +128,12 @@ export default function Home() {
               alignItems="center"
               textAlign="center"
             >
-                      <Collapse
+                      {/* <Collapse
             in={enCollapse}
             {...(enCollapse ? { timeout: 1000 } : {})}
             collapsedHeight={0}
-          >
+          > */}
+          <Box>
               <Typography variant="h3">
                 PROJECTS
               </Typography>
@@ -148,7 +151,8 @@ export default function Home() {
                   />
                 </IconButton>
               </ScrollLink>
-              </Collapse>
+              {/* </Collapse> */}
+              </Box>
             </Box>
           
         </Box>
