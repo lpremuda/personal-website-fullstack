@@ -240,7 +240,7 @@ export default function Navbar({ toggleSidebar, changeHashStr }) {
               </Box>
           </Toolbar>
         </div>
-      <Collapse in={location.pathname === "/"} className={classes.collapseContainer}>
+      <Box in={location.pathname === "/"} className={classes.collapseContainer}>
         <Box onMouseEnter={onMouseEnterFunc} onMouseLeave={onMouseLeaveFunc} className={classes.projectsDropDownWrapper}>
           <Box className={classes.projectsDropDown}>
             {configProjects.map((configProject,iCP) => {
@@ -265,7 +265,7 @@ export default function Navbar({ toggleSidebar, changeHashStr }) {
             })}
           </Box>
         </Box>
-        </Collapse>
+        </Box>
       </AppBar>
       {location.pathname !== '/' && <div style={{ height: config.Navbar.main.height }}></div>}
     </>
