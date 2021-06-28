@@ -54,6 +54,12 @@ if (!isDev && cluster.isMaster) {
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use('/send-email', routerMain)
 
+  app.get('/*', (req,res) => {
+    res.sendFile(path.resolve(__dirname, '../client/public/index.html'), function(err) {
+      res.status(500).send(err)
+    })
+  })
+
   // All remaining requests return the React app, so it can handle routing.
   // This seemed like it was necessary before, but after commenting it out and testing it on Heroku, everything works fine
   // app.get('*', function(request, response) {

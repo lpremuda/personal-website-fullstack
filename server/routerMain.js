@@ -1,15 +1,8 @@
 const express = require('express')
 const nodemailer = require('nodemailer')
 require('dotenv').config()
-const path = require('path')
 
 const router = express.Router()
-
-router.get('/*', (req,res) => {
-  res.sendFile(path.resolve(__dirname, '../client/public/index.html'), function(err) {
-    res.status(500).send(err)
-  })
-})
 
 router.post('/', async (req,res) => {
   console.log('post request to "/" in routerMain')
