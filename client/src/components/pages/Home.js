@@ -85,12 +85,11 @@ export default function Home() {
               display="flex"
               alignItems="center"
             >
-              {/* <Collapse
+              <Collapse
                 in={enCollapse}
                 {...(enCollapse ? { timeout: 1000 } : {})}
                 collapsedHeight={0}
-              > */}
-              <Box>
+              >
                 <Box
                   display="flex"
                   flexDirection="column"
@@ -115,8 +114,7 @@ export default function Home() {
                     </Typography>
                   </Box>
                 </Box>
-              {/* </Collapse> */}
-              </Box>
+              </Collapse>
             </Box>
           
 
@@ -128,31 +126,29 @@ export default function Home() {
               alignItems="center"
               textAlign="center"
             >
-                      {/* <Collapse
-            in={enCollapse}
-            {...(enCollapse ? { timeout: 1000 } : {})}
-            collapsedHeight={0}
-          > */}
-          <Box>
-              <Typography variant="h3">
-                PROJECTS
-              </Typography>
-              <ScrollLink
-                to="project1"
-                spy={config.scrollLink.spy}
-                smooth={config.scrollLink.smooth}
-                offset={config.scrollLink.offset}
-                duration={config.scrollLink.duration}
+              <Collapse
+                in={enCollapse}
+                {...(enCollapse ? { timeout: 1000 } : {})}
+                collapsedHeight={0}
               >
-                <IconButton>
-                  <ExpandMoreIcon
-                    fontSize="large"
-                    style={{ color: "#fff", fontSize: "50px"}}
-                  />
-                </IconButton>
-              </ScrollLink>
-              {/* </Collapse> */}
-              </Box>
+                <Typography variant="h3">
+                  PROJECTS
+                </Typography>
+                <ScrollLink
+                  to="project1"
+                  spy={config.scrollLink.spy}
+                  smooth={config.scrollLink.smooth}
+                  offset={config.scrollLink.offset}
+                  duration={config.scrollLink.duration}
+                >
+                  <IconButton>
+                    <ExpandMoreIcon
+                      fontSize="large"
+                      style={{ color: "#fff", fontSize: "50px"}}
+                    />
+                  </IconButton>
+                </ScrollLink>
+              </Collapse>
             </Box>
           
         </Box>

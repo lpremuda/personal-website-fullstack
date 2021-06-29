@@ -15,7 +15,7 @@ const ScrollHandler = ({ location, children }) => {
           behavior: element ? "smooth" : "auto",
           top: element ? element.offsetTop + config.Navbar.navBarOffset : 0
         });
-      }, 200);
+      }, 100);
     }, [location]);
 
   return null;
