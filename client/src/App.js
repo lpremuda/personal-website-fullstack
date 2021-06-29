@@ -5,6 +5,7 @@ import Contact from './components/pages/Contact'
 import Footer from './components/Footer'
 import Home from './components/pages/Home'
 import Navbar from './components/Navbar'
+import ScrollHandler from  './components/ScrollHandler'
 import ScrollToTop from './components/ScrollToTop'
 import Sidebar from './components/Sidebar'
 
@@ -43,8 +44,11 @@ function App() {
 
   return (
     <div className={classes.app} >
-      <Router>
-        <ScrollToTop hashStr={hashStr} />
+      <Router>  
+
+        {/* <ScrollToTop hashStr={hashStr} /> */}
+        <ScrollHandler />
+      
         <div>
           <Navbar
             toggleSidebar={toggleSidebar}

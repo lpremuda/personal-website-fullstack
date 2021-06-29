@@ -111,10 +111,10 @@ export default function Footer({ changeHashStr }) {
                     />
                   :
                     <Link
-                      // to={`/#project${iCP+1}`}
-                      to="/"
+                      to={`/#project${iCP+1}`}
+                      // to="/"
                       className={classes.footerLink}
-                      onClick={() => changeHashStr(`project${iCP+1}`)}
+                      // onClick={() => changeHashStr(`project${iCP+1}`)}
                     >
                       {`Project ${iCP+1}`}
                     </Link>
