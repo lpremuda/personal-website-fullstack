@@ -14,10 +14,10 @@ export const configProjects = [
     },
     dialog: {
       projectDescription: [
-        "React-based sign-in app. User is able to Sign Up, Log In, Recover Password, Change Username, Change Password, and Sign Out.",
+        "React-based sign-in app. User can Sign Up, Log In, Recover Password, Change Username, Change Password, and Sign Out.",
         "React Bootstrap used to accelerate development to make a simple and concise UI/UX layout.",
         "Firebase Authentication API used to simplify user authentication. Context used to pass user information and Firebase authentication functions. Prevents users that are not signed in from getting to the dashboard page.",
-        "Deployed to Heroku.",
+        "Deployed to Heroku using third-party create-react-app buildpack.",
       ],
       frontEnd: [
         "React",
@@ -66,7 +66,7 @@ export const configProjects = [
   // MEN Library
   {
     hero: {
-      title: "Full-Stack MEN Library App",
+      title: "Full-Stack MongoDB, Express, and Node Library App",
       description: "MongoDB, Express, and Node working together to build full-stack RESTful following the MVC design pattern",
       image: {
         src: "images/YourLibrary/YourLibrary-Index.jpg",
@@ -78,12 +78,12 @@ export const configProjects = [
     },
     dialog: {
       projectDescription: [
-        "Full-stack MEN app with EJS Javascript templating for rendering views instead of React (MERN) or Angular (MEAN). User is able to perform CRUD actions on authors and books.",
+        "Full-stack MongoDB, Express, and Node app with EJS templating for rendering views. User can perform CRUD actions on authors and books.",
         "Node running Express to route incoming requests, perform database queries, and return appropriate responses.",
         "RESTful API for creating, reading, updating, and deleting books and authors per user input.",
         "MongoDB using Mongoose.js to create Author and Book schema and models, as well as database queries. Database deployed with MongoDB Atlas.",
         "EJS Embedded Javascript templating to dynamically create HTML files on server side.",
-        "Deployed to Heroku.",
+        "Deployed to Heroku using Node.js buildpack.",
       ],
       frontEnd: [
         "EJS",
@@ -140,11 +140,11 @@ export const configProjects = [
     },
     dialog: {
       projectDescription: [
-        "React-based sign-in app. User is able to Sign Up, Log In, Recover Password, Change Username, Change Password, and Sign Out.",
-        "Heroku Node.js buildpack starts Express server and initiates create-react-app build command, which creates static files to serve.",
-        "Express serves static files and creates route for a contact form submission to initiate a Nodemailer email to be sent.",
+        "Full-stack personal portfolio website (front-end intensive with light back-end).",
+        "Material UI framework used to accelerate front-end development.",
+        "Express app on back-end to both accept contact form POST requests that initiate email transport, as well as serve static files built by create-react-app.",
         "Nodemailer module using Sendinblue SMTP server to send website owner an email with users' name, email address, and message when the contact form is submitted.",
-        "Deployed to Heroku.",
+        "Deployed to Heroku using Node.js buildpack. Heroku Node.js buildpack starts Express server and initiates create-react-app build command, which creates static files to serve.",
       ],
       frontEnd: [
         "React",
