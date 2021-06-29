@@ -217,9 +217,10 @@ export default function Navbar({ toggleSidebar, changeHashStr }) {
                       />
                     :
                       <Link
-                        to="/"
+                        to="/#resume"
+                        // to="/"
                         className={`${classes.navLinkBase} ${classes.navLinkMain}`}
-                        onClick={() => changeHashStr('resume')}
+                        // onClick={() => changeHashStr('resume')}
                       >
                         Resume
                       </Link>
@@ -240,7 +241,7 @@ export default function Navbar({ toggleSidebar, changeHashStr }) {
               </Box>
           </Toolbar>
         </div>
-      <Box in={location.pathname === "/"} className={classes.collapseContainer}>
+      <Collapse in={location.pathname === "/"} className={classes.collapseContainer}>
         <Box onMouseEnter={onMouseEnterFunc} onMouseLeave={onMouseLeaveFunc} className={classes.projectsDropDownWrapper}>
           <Box className={classes.projectsDropDown}>
             {configProjects.map((configProject,iCP) => {
@@ -262,10 +263,10 @@ export default function Navbar({ toggleSidebar, changeHashStr }) {
                   </div>
                 </Grow> 
               )
-            })}
+              })}
           </Box>
         </Box>
-        </Box>
+      </Collapse>
       </AppBar>
       {location.pathname !== '/' && <div style={{ height: config.Navbar.main.height }}></div>}
     </>

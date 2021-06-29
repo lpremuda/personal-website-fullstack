@@ -1,6 +1,8 @@
-import { useEffect } from "react";
-import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
+import { useEffect } from "react"
+import PropTypes from "prop-types"
+import { withRouter } from "react-router-dom"
+
+import { config } from '../config'
 
 const ScrollHandler = ({ location, children }) => {
   useEffect(
@@ -11,9 +13,9 @@ const ScrollHandler = ({ location, children }) => {
         // const totalOffset = element.offsetTop - 120
         window.scrollTo({
           behavior: element ? "smooth" : "auto",
-          top: element ? element.offsetTop - 120 : 0
+          top: element ? element.offsetTop + config.Navbar.navBarOffset : 0
         });
-      }, 100);
+      }, 200);
     }, [location]);
 
   return null;

@@ -134,10 +134,10 @@ export default function Footer({ changeHashStr }) {
                     />
                   :
                     <Link
-                      // to="/#resume"
-                      to="/"
+                      to="/#resume"
+                      // to="/"
                       className={classes.footerLink}
-                      onClick={() => changeHashStr('resume')}
+                      // onClick={() => changeHashStr('resume')}
                     >
                       Resume
                     </Link>
