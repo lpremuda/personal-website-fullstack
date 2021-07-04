@@ -1,4 +1,67 @@
 export const configProjects = [
+  
+  // Full-Stack Library App - MongoDB, Express, and Node
+  {
+    hero: {
+      title: "Full-Stack Library App - MongoDB, Express, and Node",
+      description: "MongoDB, Express, and Node working together to build full-stack RESTful following the MVC design pattern",
+      image: {
+        src: "images/YourLibrary/YourLibrary-Index.jpg",
+        alt: "YourLibrary-Index.jpg"
+      },
+      backgroundColor: "blue",
+      hideButtons: false,
+      hideDemoButton: false
+    },
+    dialog: {
+      projectDescription: [
+        "Full-stack MongoDB, Express, and Node app with EJS templating for rendering views.",
+        "Node running Express to route incoming requests, perform database queries, and return appropriate responses.",
+        "RESTful API for creating, reading, updating, and deleting books and authors per user input.",
+        "MongoDB using Mongoose.js to create Author and Book schema and models, as well as database queries. Database deployed with MongoDB Atlas.",
+        "EJS Embedded Javascript templating to dynamically create HTML files on server side.",
+        "Deployed to Heroku using Node.js buildpack.",
+      ],
+      frontEnd: [
+        "EJS",
+        "HTML5",
+        "CSS3",
+      ],
+      backEnd: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose.js",
+      ],
+      imageFiles: [
+        "url(images/YourLibrary/YourLibrary-Index.jpg)",
+        "url(images/YourLibrary/YourLibrary-Book_New.jpg)",
+        "url(images/YourLibrary/YourLibrary-Book_Show.jpg)",
+        "url(images/YourLibrary/YourLibrary-Author_New.jpg)",
+        "url(images/YourLibrary/YourLibrary-Author_Show.jpg)",        
+      ],
+      imageFilesNoURL: [
+        "images/YourLibrary/YourLibrary-Index.jpg",
+        "images/YourLibrary/YourLibrary-Book_New.jpg",
+        "images/YourLibrary/YourLibrary-Book_Show.jpg",
+        "images/YourLibrary/YourLibrary-Author_New.jpg",
+        "images/YourLibrary/YourLibrary-Author_Show.jpg",        
+      ],
+      alts: [
+        "YourLibrary-Index.jpg",
+        "YourLibrary-Book_New.jpg",
+        "YourLibrary-Book_Show.jpg",
+        "YourLibrary-Author_New.jpg",
+        "YourLibrary-Author_Show.jpg",        
+      ],
+      grayCancelBtn: true,
+    },
+    links: {
+      github: "https://github.com/lpremuda/YourLibrary",
+      demo: "https://your-library.herokuapp.com/"
+    }
+  },
+
   // React Sign-In
   {
     hero: {
@@ -14,7 +77,7 @@ export const configProjects = [
     },
     dialog: {
       projectDescription: [
-        "React-based sign-in app. User can Sign Up, Log In, Recover Password, Change Username, Change Password, and Sign Out.",
+        "React-based sign-in app. User can sign up, log in, recover password, change username, change password, and sign out.",
         "React Bootstrap used to accelerate development to make a simple and concise UI/UX layout.",
         "Firebase Authentication API used to simplify user authentication. Context used to pass user information and Firebase authentication functions. Prevents users that are not signed in from getting to the dashboard page.",
         "Deployed to Heroku using third-party create-react-app buildpack.",
@@ -60,68 +123,6 @@ export const configProjects = [
     links: {
       github: "https://github.com/lpremuda/react-firebase-auth-app",
       demo: "https://react-firebase-auth-app.herokuapp.com/login"
-    }
-  },
-
-  // MEN Library
-  {
-    hero: {
-      title: "Full-Stack MongoDB, Express, and Node Library App",
-      description: "MongoDB, Express, and Node working together to build full-stack RESTful following the MVC design pattern",
-      image: {
-        src: "images/YourLibrary/YourLibrary-Index.jpg",
-        alt: "YourLibrary-Index.jpg"
-      },
-      backgroundColor: "blue",
-      hideButtons: false,
-      hideDemoButton: false
-    },
-    dialog: {
-      projectDescription: [
-        "Full-stack MongoDB, Express, and Node app with EJS templating for rendering views. User can perform CRUD actions on authors and books.",
-        "Node running Express to route incoming requests, perform database queries, and return appropriate responses.",
-        "RESTful API for creating, reading, updating, and deleting books and authors per user input.",
-        "MongoDB using Mongoose.js to create Author and Book schema and models, as well as database queries. Database deployed with MongoDB Atlas.",
-        "EJS Embedded Javascript templating to dynamically create HTML files on server side.",
-        "Deployed to Heroku using Node.js buildpack.",
-      ],
-      frontEnd: [
-        "EJS",
-        "HTML5",
-        "CSS3",
-      ],
-      backEnd: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Mongoose.js",
-      ],
-      imageFiles: [
-        "url(images/YourLibrary/YourLibrary-Index.jpg)",
-        "url(images/YourLibrary/YourLibrary-Book_New.jpg)",
-        "url(images/YourLibrary/YourLibrary-Book_Show.jpg)",
-        "url(images/YourLibrary/YourLibrary-Author_New.jpg)",
-        "url(images/YourLibrary/YourLibrary-Author_Show.jpg)",        
-      ],
-      imageFilesNoURL: [
-        "images/YourLibrary/YourLibrary-Index.jpg",
-        "images/YourLibrary/YourLibrary-Book_New.jpg",
-        "images/YourLibrary/YourLibrary-Book_Show.jpg",
-        "images/YourLibrary/YourLibrary-Author_New.jpg",
-        "images/YourLibrary/YourLibrary-Author_Show.jpg",        
-      ],
-      alts: [
-        "YourLibrary-Index.jpg",
-        "YourLibrary-Book_New.jpg",
-        "YourLibrary-Book_Show.jpg",
-        "YourLibrary-Author_New.jpg",
-        "YourLibrary-Author_Show.jpg",        
-      ],
-      grayCancelBtn: true,
-    },
-    links: {
-      github: "https://github.com/lpremuda/YourLibrary",
-      demo: "https://your-library.herokuapp.com/"
     }
   },
 
