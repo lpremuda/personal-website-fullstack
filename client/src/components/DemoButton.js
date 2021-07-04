@@ -26,7 +26,6 @@ export default function DemoButton({ href }) {
     // Eventually insert a Material UI popover
     <MuiLink target="_blank" rel="noreferrer" href={href} className={classes.buttonLink} >
       <Button
-        href={href}
         variant="contained"
         color="secondary"
         size="large"
