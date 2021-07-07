@@ -101,8 +101,9 @@ export default function About() {
               <Typography variant="body1">
                 I've been working as an engineer in the infrared imaging industry, primarily focused on test, design, and camera system architecture.
                 Throughout my career, I've mostly enjoyed and focused on software, image processing, and data analysis.
-                I'm focused on taking my career in the direction of strictly software engineering, particularly web development, which I have enjoyed most out of all of my software endeavors.
-                During my time learning and working with web development, I have focused more on front-end development, such as React.js,
+                I'm focused on taking my career in the direction of strictly software engineering, which I have enjoyed the most out of all of my software experience.
+                I've been working to get an all-encompassing set of software and web development skills,  which includes front end, back end, and full-stack.
+                The goal for my ongoing projects and future career software positions are to focus more on full-stack and back end work.  
               <Typography>
               </Typography>
               </Typography>
@@ -120,7 +121,7 @@ export default function About() {
               </Typography>
               <Box className={classes.aboutMeExperienceContainer}>
                 <Box mr={8} className={classes.aboutMeExperienceColumn}>
-                  <Typography variant="body1">Javascript (ES6)</Typography>
+                  <Typography variant="body1">Javascript ES6</Typography>
                   <Typography variant="body1">HTML5</Typography>
                   <Typography variant="body1">CSS3</Typography>
                   <Typography variant="body1">Node.js</Typography>
@@ -135,8 +136,16 @@ export default function About() {
                   <Typography variant="body1">Python</Typography>
                   <Typography variant="body1">MATLAB</Typography>
                   <Typography variant="body1">Bash</Typography>
-                  <Typography variant="body1">C/C++</Typography>
-                  <Typography variant="body1">C#</Typography>
+                  <Typography variant="body1">C</Typography>
+                  <Typography variant="body1">Firebase</Typography>
+                  <Typography variant="body1">Git/Github</Typography>
+                </Box>
+                <Box mr={8}>
+                  <Typography variant="body1">MongoDB</Typography>
+                  <Typography variant="body1">Mongoose.js</Typography>
+                  <Typography variant="body1">Java</Typography>
+                  <Typography variant="body1">Spring</Typography>
+                  <Typography variant="body1">PostgreSQL</Typography>
                 </Box>
               </Box>
             </Box>
