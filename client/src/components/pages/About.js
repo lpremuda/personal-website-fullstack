@@ -146,6 +146,10 @@ export default function About() {
                   <Typography variant="body1">Java</Typography>
                   <Typography variant="body1">Spring</Typography>
                   <Typography variant="body1">PostgreSQL</Typography>
+                  <Typography variant="body1">Docker</Typography>
+                </Box>
+                <Box mr={8}>
+                  <Typography variant="body1">CI/CD</Typography>
                 </Box>
               </Box>
             </Box>
